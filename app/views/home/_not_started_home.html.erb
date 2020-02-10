@@ -21,7 +21,7 @@
         <h1 class="stateName"><%= @current_genre.name %> </h1>
     
           <p class="groupInfoSubtext">
-            <%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %> Artists Entered &mdash; Round 1 will begin on February 29
+            <%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %> Artists Entered &mdash; Round 1 will begin on March 1
           </p>
           <% unless current_user.song%>
             <% unless @current_genre.participant_cap == @current_genre.songs.count %>
