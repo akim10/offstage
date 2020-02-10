@@ -3,7 +3,8 @@ require_relative 'boot'
 require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups)
+# Bundler.require(*Rails.groups)
+Bundler.require(*Rails.groups(assets: %w[production]))
 
 module SoundStage
   class Application < Rails::Application
