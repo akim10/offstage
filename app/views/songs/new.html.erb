@@ -6,16 +6,9 @@
     <div class="col-12 col-md-10 col-lg-8 mainViewContainer animated fadeIn fast">
       <div class="row marginTop32">
         <div class="col-12">
-          <% if defined?(@old_song) %>
-            <h4> Edit Song Submission</h4>
-            <hr />
-            <p> Change your SoundStage submission.</p>
-          <% else %>
-            <a href="<%= edit_user_path(current_user) %>" class="leftChevron"> <%= image_tag 'leftChevron.svg', class: 'leftChevronSVG'%></a>
-            <h4> Step 2/2: Submit a Song </h4>
-            <hr />
-            <p> Select a song to submit to the upcoming Hip Hop SoundStage.</p>
-          <% end %>
+          <h4> Step 2/2: Submit a Song </h4>
+          <hr />
+          <p> Select a song to submit.</p>
           
           <%= form_for(@song) do |f| %>
             <div class="tracklist">
