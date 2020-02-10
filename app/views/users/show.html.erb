@@ -1,0 +1,93 @@
+<div class="container-fluid animated fadeIn fast">
+  <div class="row row-no-margin">
+    <div class="col-0 col-md-1 col-lg-2">
+    </div>
+
+    <div class="col-12 col-md-10 col-lg-8 mainViewContainer">
+
+      <div class="row marginTop32">
+        <div class="col-12">
+          <h4> <%=@user.display_name%> </h4>
+          <hr class="sectionDivider"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <h5 class="accountSection"> Submission </h5>
+        </div>
+        <% if defined?(@song) %>
+          <div class="col-12 col-md-8"> 
+
+              <div class="accountGenreLabel">
+                <p class="accountGenreLabel accountLabel"> Your <%=@submitted_genre%> Submission </p>
+            <% if @state != "in progress" %>
+
+                <%= link_to "Remove", songs_destroy_path(current_user.song), class:"accountField"%>
+            <% end %>
+
+              </div>
+              <hr class="fieldDivider" />
+
+
+            <div class="accountArtist">
+              <div class="accountArtistWidget">
+                <%= image_tag(@artist.images.first["url"], class: "accountArtistImage")%>
+                <p class="accountArtistWidgetName verticallyCentered"> <%=@artist.name%></p>
+              </div>
+              <% if @state != "in progress" %>
+                <!-- <%= link_to "Edit", edit_user_path(current_user), class:"verticallyCentered accountField"%> -->
+              <% end %>
+            </div>
+
+            <div class="accountSong">
+              <div class="accountSongWidget">
+                <%= image_tag(@song.album.images.first["url"], class:"accountSongImage")%>
+                <div class="trackYearName">
+                  <p class="trackYear">
+                    <%= Date.parse(@song.album.release_date).year rescue @song.album.release_date %>
+                  </p>
+                  <p class="trackName"><%= @song.name %></p>
+                </div>
+              </div>
+              <% if @state != "in progress" %>
+                <!-- <%= link_to "Edit", new_song_path, class:"verticallyCentered accountField"%> -->
+              <% end %>
+            </div>
+
+          </div>
+        <% else %>
+
+          <div class="col-12 col-md-8">
+            <p class="accountLabel"> Your <%=@submitted_genre%> Submission </p>
+            <p class="accountField">None found</p> 
+          </div>
+        <% end %>
+      </div>
+
+      <hr class="fieldDivider" />
+
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <h5 class="accountSection"> Other </h5>
+        </div>
+       <div class="col-12 col-md-8">
+          <div class="marginBottom32">
+            <p class="accountLabel">Questions/Feedback?</p>
+            <%= mail_to "andrewkim124@gmail.com", "Contact", class:"accountField", target: "_blank" %>
+          </div>
+          <div>
+            <p class="accountLabel">Account</p>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"accountField"%>
+          </div>
+
+        </div>
+      </div>
+      <br />
+      <!-- <hr class="sectionDivider"/> -->
+    </div>
+
+    <div class="col-0 col-md-1 col-lg-2">
+    </div>
+  </div>
+</div>  <!-- end container -->

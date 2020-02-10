@@ -1,0 +1,23 @@
+<div class="container-fluid animated fadeIn fast">
+
+  <div class="row row-no-margin preVoting">
+    <div class="col-12 wrap fullHeight">
+      <div class="inner fullWidth centered groupInfo">
+        <!-- add @round for number -->
+        <h1 class="stateName"><%= @current_genre.name %> </h1>
+        
+        <% if current_user.song_queue[@current_genre.name].empty? %>
+          <p class="groupInfoSubtext">
+            You've voted for all of the songs this round. <br /> Check back <%=@next_round_day%> for <%=@next_round%>!
+          </p>
+        <% else %>
+          <p class="groupInfoSubtext">
+            <%= @round_title %> &mdash; <%= @current_genre.songs.active.count %>  Artists Remaining
+          </p>
+          <%= link_to "Vote Now", {:controller => :songs, :action => :voting}, class: "btn btn-primary homeButton voteNowButton"%>          
+        <% end %>
+          <%= link_to "Change Genre", select_current_genre_users_path(current_user), method: :put, class: "btn btn-outline-primary homeButton"%>
+      </div>
+    </div>
+  </div>
+</div>  <!-- end container -->

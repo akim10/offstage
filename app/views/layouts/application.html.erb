@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+    <title>SoundStage</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application'%>
+  </head>
+
+  <body id="primary-content">
+    <%- if controller_name != 'sessions' && controller_name != 'registrations'%>
+      <%= render :partial => "partials/nav" %>
+    <% end %>
+
+      <%= render :partial => "partials/flash" %>
+
+      <%= yield %>
+
+   <%- if controller_name != 'sessions' && controller_name != 'registrations'%>
+      <%= render :partial => "partials/footer" %>
+    <% end %>
+  </body>
+</html>

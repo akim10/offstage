@@ -1,0 +1,39 @@
+<div class="container-fluid  animated fadeIn fast">
+  <div class="row row-no-margin preVoting">
+    <div class="col-12 wrap fullHeight">
+      <div class="inner fullWidth centered groupInfo">
+        <!-- add @round for number -->
+        <h1 class="stateName"> Congratulations </h1>
+      
+          <p class="groupInfoSubtext">
+            <strong><%= @winning_song.name %></strong> by <strong><%= @winning_artist.name %></strong> is your <%= @current_genre_name %> Winner! <%= link_to "Change Genre", select_current_genre_users_path(current_user), method: :put%>
+          </p>
+          
+          <div class="centered embeddedSong">
+            <iframe src="https://open.spotify.com/embed/track/<%= @winning_song.id %>" width="70%" height="92px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <p class="centered enterSoundStageText">
+        <% if @song && @artist && @on_submitted_genre%>
+          <%= link_to "#{@song.name} by #{@artist.name}", "https://open.spotify.com/track/#{@song.id}", target: "_blank"%> has been submitted to the next <strong><%=@submitted_genre_name%></strong> SoundStage.
+        <% else %>
+          The next <%= @current_genre_name %> Soundstage (<%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %> Artists Entered) starts this <%=@next_stage_day %>!
+          <% unless @current_genre.participant_cap == @current_genre.songs.count %>
+            <% if current_user.artist_id? %>
+              <%= link_to "Enter now", new_song_path %>
+            <% else %>
+              <%= link_to "Enter now", edit_user_path(current_user) %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </p>
+
+            
+          
+    </div>
+  </div>
+
+
+</div>  <!-- end container -->

@@ -1,0 +1,58 @@
+<div class="container-fluid ">
+  <div class="row row-no-margin">
+    <div class="col-0 col-md-1 col-lg-2">
+    </div>
+
+    <div class="col-12 col-md-10 col-lg-8 mainViewContainer animated fadeIn fast">
+      <div class="row marginTop32">
+        <div class="col-12">
+          <% if defined?(@old_song) %>
+            <h4> Edit Song Submission</h4>
+            <hr />
+            <p> Change your SoundStage submission.</p>
+          <% else %>
+            <a href="<%= edit_user_path(current_user) %>" class="leftChevron"> <%= image_tag 'leftChevron.svg', class: 'leftChevronSVG'%></a>
+            <h4> Step 2/2: Submit a Song </h4>
+            <hr />
+            <p> Select a song to submit to the upcoming Hip Hop SoundStage.</p>
+          <% end %>
+          
+          <%= form_for(@song) do |f| %>
+            <div class="tracklist">
+              <% @artist.albums.each do |album| %>
+                <% album.tracks.each do |track| %>
+                  <div class="songRow">
+                    <div class="trackInfoLeft">
+                      <%= image_tag album.images.first["url"], class:"albumImage"%>
+                      <div class="trackYearName">
+                        <p class="trackYear"><%= Date.parse(album.release_date).year rescue album.release_date %></p>
+                        <p class="trackName"><%= track.name %></p>
+                      </div>
+                    </div>
+                    <div class="trackInfoRight">
+                      <% if track.explicit %>
+                        <%= image_tag "explicitIndicator.svg", class: "explicitIndicator"%>
+                      <% end %>
+                      <span class="trackDuration"><%= formatTrackDuration(track.duration_ms) %></span>
+                      <label class="btn btn-secondary selectRadioButton">
+                        <%= f.radio_button("track_id", track.id) %>
+                      </label>
+                    </div>
+                  </div>
+                  <hr class="divider" />
+                <% end %>
+              <% end %>
+            </div>
+            <div class="rightAlign">
+              <%= f.submit 'Submit', disabled: true, class: 'btn btn-secondary disabled ', :id => "submitTrackButton"%>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-0 col-md-1 col-lg-2">
+    </div>
+  </div>
+</div>  <!-- end container -->

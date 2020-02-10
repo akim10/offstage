@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <% if @state == "not started" %>
+    <%= render :partial => 'not_started_home' %>
+  <% elsif @state == "in progress"%>
+    <%= render :partial => 'in_progress_home' %>
+  <% else %> <!-- state == "ended" -->
+    <%= render :partial => 'ended_home' %>
+  <% end %>
+<% else %>
+    <%= render :partial => 'splash_home' %>
+<% end %>

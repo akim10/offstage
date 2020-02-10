@@ -1,0 +1,61 @@
+/* --- Hero --- */
+.fullPage{
+  height: 100vh;
+  min-height: 650px;
+  transform: translateY(50%);
+  margin-top: -184px;
+  margin-bottom: 10vh;
+}
+#splashImage{
+    float:right;
+    margin-top: -8%;
+    width: 124%;
+    /*animation: hover 4s ease-in-out infinite;*/
+}
+
+#splashImage{
+    float:right;
+    margin-top: -8%;
+    width: 124%;
+    transition: all .5s ease-in-out;
+}
+#splashImage:hover { 
+  transform: scale(1.04); 
+}
+
+/* --- All Sections --- */
+.listItem{
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+.homeImage{
+    max-width:100%;
+    max-height:100%;
+}
+.homeSection{
+    padding: 12% 8%;
+}
+
+
+
+/* --- Section 2: Artists; --- */
+.artistList{
+    padding-left: 8%;
+}
+#artistSplashImage{
+    max-width:84%;
+    max-height:84%;
+}
+
+
+
+/* --- Section 3: Be the Next Big Thing; --- */
+.endingSection{
+  min-height: 320px;
+}
+#signUpSection{
+    text-align: center;
+}
+#signUpCTA{
+    margin-bottom: 16px;
+}

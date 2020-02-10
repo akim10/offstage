@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="19px" viewBox="0 0 54 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="songSmall" transform="translate(-566.000000, -19.000000)">
+            <g id="Group-6">
+                <g id="Song">
+                    <g id="Group-4">
+                        <g id="Group" transform="translate(567.000000, 20.000000)">
+                            <text id="EXPLICIT" font-family="RobotoCondensed-Bold, Roboto Condensed" font-size="10" font-style="condensed" font-weight="bold" letter-spacing="0.3" fill="#666666">
+                                <tspan x="7" y="12">EXPLICIT</tspan>
+                            </text>
+                            <rect id="Rectangle" stroke="#666666" x="0" y="0" width="52" height="17" rx="3"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

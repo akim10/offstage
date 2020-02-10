@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand navbar-dark">
+    <a class="navbar-brand">
+      <%= link_to "RecordStage", root_path, class:"navbar-brand" %>
+    </a>
+
+    <% if user_signed_in? %>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="navUnderline nav-item nav-link" href="<%= user_path(current_user)%>"><%= @display_name %></a>
+        </div>
+      </div>
+    <% else %>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="<%= new_user_session_path%>">Sign In </a>
+          <a class="navUnderline nav-item nav-link" href="<%= new_user_session_path %>">Join Now</a>
+        </div>
+      </div>
+    <% end %>
+
+  </nav>
+</div> <!-- end container -->
