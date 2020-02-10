@@ -5,3 +5,4 @@ require_relative 'config/application'
 require "lib/tasks/round.rake"
 
 Rails.application.load_tasks
+Rails.application.load_seed
