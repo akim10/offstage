@@ -3,10 +3,10 @@ require_relative 'boot'
 require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-# Bundler.require(*Rails.groups)
-Bundler.require(*Rails.groups(assets: %w[production]))
+Bundler.require(*Rails.groups)
+Bundler.require(:production)
 
-module SoundStage
+module RecordStage
   class Application < Rails::Application
     RSpotify::authenticate(ENV['SPOTIFY_CLIENT'], ENV['SPOTIFY_SECRET'])
     # Initialize configuration defaults for originally generated Rails version.

@@ -72,7 +72,7 @@ genres.each { |genre| Genre.create! genre }
 #   {active: true, track_id: '3BQLTtpQOYGXQY2lT3ZZeU', votes: 0, pair_id: nil, user_id: 14, genre_id: 4 },
 #   {active: true, track_id: '3QchgGmYssZxHOlIh3lgRs', votes: 0, pair_id: nil, user_id: 15, genre_id: 4 },
 #   {active: true, track_id: '4t0OI7XrODjSkAu3bTPmWj', votes: 0, pair_id: nil, user_id: 16, genre_id: 4 }
-]
+# ]
 
 # spotify:track:0DiWol3AO6WpXZgp0goxAV
 # spotify:track:62CprXvSWsKBvYu3Yba55A
