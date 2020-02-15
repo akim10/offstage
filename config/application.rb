@@ -11,7 +11,7 @@ Bundler.require(:production)
 # end
 module RecordStage
   class Application < Rails::Application
-    RSpotify::authenticate(ENV['SPOTIFY_CLIENT'], ENV['SPOTIFY_SECRET'])
+    # RSpotify::authenticate(ENV['SPOTIFY_CLIENT'], ENV['SPOTIFY_SECRET'])
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.i18n.fallbacks = true
