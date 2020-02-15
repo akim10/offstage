@@ -1,3 +1,4 @@
+# begin
 require_relative 'boot'
 
 require 'rails/all'
@@ -5,7 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 # Bundler.require(*Rails.groups)
 Bundler.require(:production)
-
+# rescue LoadError => e
+  # raise e unless ENV['RAILS_ENV'] == "production"
+# end
 module RecordStage
   class Application < Rails::Application
     RSpotify::authenticate(ENV['SPOTIFY_CLIENT'], ENV['SPOTIFY_SECRET'])
