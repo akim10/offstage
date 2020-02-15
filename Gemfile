@@ -95,73 +95,73 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 
-# group :production do
-#   ruby '2.6.5'
-#   # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-#   gem 'rails', '~> 6.0.1'
-#   # Use sqlite3 as the database for Active Record
-#   # gem 'sqlite3', '~> 1.4'
-#   # Use Puma as the app server
-#   gem 'puma', '~> 4.1'
-#   # Use SCSS for stylesheets
-#   gem 'sass-rails', '>= 6'
-#   # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-#   gem 'webpacker', '~> 4.0'
-#   # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-#   gem 'turbolinks', '~> 5'
-#   # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-#   gem 'jbuilder', '~> 2.7'
-#   # Use Redis adapter to run Action Cable in production
-#   # gem 'redis', '~> 4.0'
-#   # Use Active Model has_secure_password
-#   # gem 'bcrypt', '~> 3.1.7'
+group :production do
+  ruby '2.6.5'
+  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+  gem 'rails', '~> 6.0.1'
+  # Use sqlite3 as the database for Active Record
+  # gem 'sqlite3', '~> 1.4'
+  # Use Puma as the app server
+  gem 'puma', '~> 4.1'
+  # Use SCSS for stylesheets
+  gem 'sass-rails', '>= 6'
+  # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+  gem 'webpacker', '~> 4.0'
+  # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+  gem 'turbolinks', '~> 5'
+  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+  gem 'jbuilder', '~> 2.7'
+  # Use Redis adapter to run Action Cable in production
+  # gem 'redis', '~> 4.0'
+  # Use Active Model has_secure_password
+  # gem 'bcrypt', '~> 3.1.7'
 
 
 
-#   # postgres
-#   gem 'pg'
+  # postgres
+  gem 'pg'
 
-#   # popper
-#   gem 'popper_js'
+  # popper
+  gem 'popper_js'
 
-#   # bootstrap
-#   gem 'bootstrap', '~> 4.3.1'
+  # bootstrap
+  gem 'bootstrap', '~> 4.3.1'
 
-#   # jquery
-#   gem 'jquery-rails'
+  # jquery
+  gem 'jquery-rails'
 
-#   # font awesome
-#   gem 'font-awesome-rails'
+  # font awesome
+  gem 'font-awesome-rails'
 
-#   # simple forms
-#   gem 'simple_form'
+  # simple forms
+  gem 'simple_form'
 
-#   # devise
-#   gem 'devise'
+  # devise
+  gem 'devise'
 
-#   # rspotify
-#   gem 'rspotify'
+  # rspotify
+  gem 'rspotify'
 
-#   # store api keys securely
-#   gem "figaro"
+  # store api keys securely
+  gem "figaro"
 
-#   # omniauth
-#   gem 'omniauth-oauth2', '~> 1.3.1'
-#   gem 'omniauth-spotify'
+  # omniauth
+  gem 'omniauth-oauth2', '~> 1.3.1'
+  gem 'omniauth-spotify'
 
-#   # normalize country
-#   gem "normalize_country"
+  # normalize country
+  gem "normalize_country"
 
-#   # schedule cron jobs (progressing rounds, starting and ending Stages)
-#   gem 'whenever', require: false
+  # schedule cron jobs (progressing rounds, starting and ending Stages)
+  gem 'whenever', require: false
 
-#   # rails console formatting
-#   gem 'hirb'
+  # rails console formatting
+  gem 'hirb'
 
-#   # Use Active Storage variant
-#   # gem 'image_processing', '~> 1.2'
+  # Use Active Storage variant
+  # gem 'image_processing', '~> 1.2'
 
-#   # Reduces boot times through caching; required in config/boot.rb
-#   gem 'bootsnap', '>= 1.4.2', require: false
-#   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# end
+  # Reduces boot times through caching; required in config/boot.rb
+  gem 'bootsnap', '>= 1.4.2', require: false
+  # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+end
