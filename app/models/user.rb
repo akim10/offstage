@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates_presence_of :uid, :provider
   validates :artist_id, format: /\Aspotify:artist:[A-Za-z0-9]{22}\z|\A[A-Za-z0-9]{22}\z/, :allow_blank => true
-  validates :artist_id, :uniqueness => {:message => "This artist ID already been taken. If you think this is a mistake, please contact us."}, :allow_nil => true
+  validates :artist_id, :uniqueness => {:message => "This artist ID already been taken. If you think this is a mistake, please contact help@recordstage.com."}, :allow_nil => true
   # validates_presence_of :genre
   validate :is_real_artist_id
   # validate :is_under_follower_limit

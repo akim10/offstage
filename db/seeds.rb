@@ -56,7 +56,7 @@ users = [
 # # # spotify:artist:3UvcmAOZt64oKpP95f6MMM
 # # # spotify:artist:4mYFgEjpQT4IKOrjOUKyXu
 # # # spotify:artist:06HL4z0CvFAxyc27GXpf02
-users.each { |user| User.create! user }
+# users.each { |user| User.create! user }
 
 
 # firstly delete any existing data
@@ -65,10 +65,10 @@ users.each { |user| User.create! user }
 
 
 songs = [
-  {active: true, track_id: '0DiWol3AO6WpXZgp0goxAV', votes: 0, pair_id: nil, user_id: 2, genre_id: 1 },
-  {active: true, track_id: '62CprXvSWsKBvYu3Yba55A', votes: 0, pair_id: nil, user_id: 3, genre_id: 1 },
-  {active: true, track_id: '6A9mKXlFRPMPem6ygQSt7z', votes: 0, pair_id: nil, user_id: 4, genre_id: 1 },
-  {active: true, track_id: '4ytyLpIwUXbdFsNOvgNnmP', votes: 0, pair_id: nil, user_id: 5, genre_id: 1 },
+  # {active: true, track_id: '0DiWol3AO6WpXZgp0goxAV', votes: 0, pair_id: nil, user_id: 2, genre_id: 1 },
+  # {active: true, track_id: '62CprXvSWsKBvYu3Yba55A', votes: 0, pair_id: nil, user_id: 3, genre_id: 1 },
+  # {active: true, track_id: '6A9mKXlFRPMPem6ygQSt7z', votes: 0, pair_id: nil, user_id: 4, genre_id: 1 },
+  # {active: true, track_id: '4ytyLpIwUXbdFsNOvgNnmP', votes: 0, pair_id: nil, user_id: 5, genre_id: 1 },
   {active: true, track_id: '3haS1MDe2Zh8jJaeiiymSt', votes: 0, pair_id: nil, user_id: 6, genre_id: 2 },
   {active: true, track_id: '6cLxofxCjrFpQYtifjK5Vf', votes: 0, pair_id: nil, user_id: 7, genre_id: 2 },
   {active: true, track_id: '7i6r9KotUPQg3ozKKgEPIN', votes: 0, pair_id: nil, user_id: 8, genre_id: 2 },
