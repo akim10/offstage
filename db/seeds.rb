@@ -65,21 +65,21 @@ users = [
 
 
 songs = [
-  # {active: true, track_id: '0DiWol3AO6WpXZgp0goxAV', votes: 0, pair_id: nil, user_id: 2, genre_id: 1 },
-  # {active: true, track_id: '62CprXvSWsKBvYu3Yba55A', votes: 0, pair_id: nil, user_id: 3, genre_id: 1 },
-  # {active: true, track_id: '6A9mKXlFRPMPem6ygQSt7z', votes: 0, pair_id: nil, user_id: 4, genre_id: 1 },
-  # {active: true, track_id: '4ytyLpIwUXbdFsNOvgNnmP', votes: 0, pair_id: nil, user_id: 5, genre_id: 1 },
-  {active: true, track_id: '3haS1MDe2Zh8jJaeiiymSt', votes: 0, pair_id: nil, user_id: 6, genre_id: 2 },
-  {active: true, track_id: '6cLxofxCjrFpQYtifjK5Vf', votes: 0, pair_id: nil, user_id: 7, genre_id: 2 },
-  {active: true, track_id: '7i6r9KotUPQg3ozKKgEPIN', votes: 0, pair_id: nil, user_id: 8, genre_id: 2 },
-  {active: true, track_id: '5ylLypaOksxWd75YrGtx2N', votes: 0, pair_id: nil, user_id: 9, genre_id: 2 },
-  {active: true, track_id: '1S30kHvkkdMkcuCTGSgS41', votes: 0, pair_id: nil, user_id: 10, genre_id: 3 },
-  {active: true, track_id: '5hkgrWxkobGtg30I7DsfVu', votes: 0, pair_id: nil, user_id: 11, genre_id: 3 },
-  {active: true, track_id: '1ToprX3cpBiXoAe5eNSk74', votes: 0, pair_id: nil, user_id: 12, genre_id: 3 },
-  {active: true, track_id: '3n6jQYWcuthd3U4gyLE48c', votes: 0, pair_id: nil, user_id: 13, genre_id: 3 },
-  {active: true, track_id: '3BQLTtpQOYGXQY2lT3ZZeU', votes: 0, pair_id: nil, user_id: 14, genre_id: 4 },
-  {active: true, track_id: '3QchgGmYssZxHOlIh3lgRs', votes: 0, pair_id: nil, user_id: 15, genre_id: 4 },
-  {active: true, track_id: '4t0OI7XrODjSkAu3bTPmWj', votes: 0, pair_id: nil, user_id: 16, genre_id: 4 }
+  {active: true, track_id: '0DiWol3AO6WpXZgp0goxAV', votes: 0, pair_id: nil, user_id: 2, genre_id: 1 },
+  {active: true, track_id: '62CprXvSWsKBvYu3Yba55A', votes: 0, pair_id: nil, user_id: 3, genre_id: 1 },
+  {active: true, track_id: '6A9mKXlFRPMPem6ygQSt7z', votes: 0, pair_id: nil, user_id: 4, genre_id: 1 },
+  {active: true, track_id: '4ytyLpIwUXbdFsNOvgNnmP', votes: 0, pair_id: nil, user_id: 5, genre_id: 1 }
+  # {active: true, track_id: '3haS1MDe2Zh8jJaeiiymSt', votes: 0, pair_id: nil, user_id: 6, genre_id: 2 },
+  # {active: true, track_id: '6cLxofxCjrFpQYtifjK5Vf', votes: 0, pair_id: nil, user_id: 7, genre_id: 2 },
+  # {active: true, track_id: '7i6r9KotUPQg3ozKKgEPIN', votes: 0, pair_id: nil, user_id: 8, genre_id: 2 },
+  # {active: true, track_id: '5ylLypaOksxWd75YrGtx2N', votes: 0, pair_id: nil, user_id: 9, genre_id: 2 },
+  # {active: true, track_id: '1S30kHvkkdMkcuCTGSgS41', votes: 0, pair_id: nil, user_id: 10, genre_id: 3 },
+  # {active: true, track_id: '5hkgrWxkobGtg30I7DsfVu', votes: 0, pair_id: nil, user_id: 11, genre_id: 3 },
+  # {active: true, track_id: '1ToprX3cpBiXoAe5eNSk74', votes: 0, pair_id: nil, user_id: 12, genre_id: 3 },
+  # {active: true, track_id: '3n6jQYWcuthd3U4gyLE48c', votes: 0, pair_id: nil, user_id: 13, genre_id: 3 },
+  # {active: true, track_id: '3BQLTtpQOYGXQY2lT3ZZeU', votes: 0, pair_id: nil, user_id: 14, genre_id: 4 },
+  # {active: true, track_id: '3QchgGmYssZxHOlIh3lgRs', votes: 0, pair_id: nil, user_id: 15, genre_id: 4 },
+  # {active: true, track_id: '4t0OI7XrODjSkAu3bTPmWj', votes: 0, pair_id: nil, user_id: 16, genre_id: 4 }
 ]
 
 # spotify:track:0DiWol3AO6WpXZgp0goxAV
