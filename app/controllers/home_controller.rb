@@ -19,8 +19,8 @@ class HomeController < ApplicationController
           @song = RSpotify::Track.find(current_user.song.track_id)
           @submitted_genre = current_user.song.genre
           @submitted_genre_name = @submitted_genre.format_genre
+          set_notification
           if @current_genre == @submitted_genre
-            set_notification
             @on_submitted_genre = true
           end
         end
