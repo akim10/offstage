@@ -6,22 +6,16 @@
   margin-top: -184px;
   margin-bottom: 10vh;
 }
-#splashImage{
-    float:right;
-    margin-top: -8%;
-    width: 124%;
-    /*animation: hover 4s ease-in-out infinite;*/
-}
 
 #splashImage{
     float:right;
     margin-top: -8%;
     width: 124%;
-    transition: all .5s ease-in-out;
+    /*transition: all .5s ease-in-out;*/
 }
-#splashImage:hover { 
+/*#splashImage:hover { 
   transform: scale(1.04); 
-}
+}*/
 
 /* --- All Sections --- */
 .listItem{

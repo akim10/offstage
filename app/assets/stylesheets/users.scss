@@ -87,19 +87,23 @@
   padding-right: 0px
 }
 #hiphop{
-  background-image: url('hipHopGenre.svg');
+  background: background: asset-url("hipHopGenre.svg", image);
+  /*background-image: url('hipHopGenre.svg');*/
   background-position: -2px -2px;
 }
 #edm{
-  background-image: url('edmGenre.svg');
+  background: background: asset-url("edmGenre.svg", image);
+  /*background-image: url('edmGenre.svg');*/
   background-position: -3.5px -2px;
 }
 #pop{
-  background-image: url('popGenre.svg');
+  background: background: asset-url("popGenre.svg", image);
+  /*background-image: url('popGenre.svg');*/
   background-position: -3.5px -2px;
 }
 #indie{
-  background-image: url('indieGenre.svg');
+  background: background: asset-url("indieGenre.svg", image);
+  /*background-image: url('indieGenre.svg');*/
   background-position: -3.5px -2px;
 }
 .genreButton{
