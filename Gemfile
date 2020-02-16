@@ -58,9 +58,6 @@ gem 'omniauth-spotify'
 # normalize country
 gem "normalize_country"
 
-# schedule cron jobs (progressing rounds, starting and ending Stages)
-gem 'whenever', require: false
-
 # rails console formatting
 gem 'hirb'
 
@@ -150,9 +147,6 @@ group :production do
 
   # normalize country
   gem "normalize_country"
-
-  # schedule cron jobs (progressing rounds, starting and ending Stages)
-  gem 'whenever', require: false
 
   # rails console formatting
   gem 'hirb'

@@ -3,22 +3,18 @@ namespace :round do
 
 # ------------ Very initial setup, do at launch ------------ #
 
-desc "Initial setup, stage has not started"
-  task initial_setup: :environment do
-    # Rake::Task["round:create_genres"].invoke
-    # Rake::Task["round:fill_songs"].invoke
-    genres = [
-      { name: 'hiphop', participant_cap: 64 },
-      { name: 'edm', participant_cap: 64 },
-      { name: 'pop', participant_cap: 64 },
-      { name: 'indie', participant_cap: 64 }
-    ]
-    genres.each { |genre| Genre.create! genre }
-  end
-
-
-
-
+# desc "Initial setup, stage has not started"
+#   task initial_setup: :environment do
+#     # Rake::Task["round:create_genres"].invoke
+#     # Rake::Task["round:fill_songs"].invoke
+#     genres = [
+#       { name: 'hiphop', participant_cap: 64 },
+#       { name: 'edm', participant_cap: 64 },
+#       { name: 'pop', participant_cap: 64 },
+#       { name: 'indie', participant_cap: 64 }
+#     ]
+#     genres.each { |genre| Genre.create! genre }
+#   end
 
 
 
@@ -27,23 +23,28 @@ desc "Initial setup, stage has not started"
   desc "Determining what action to do for each of the genres"
   task determine_action: :environment do
     require 'date'
-    Genre.all.each do |genre|
-      if genre.state == "in progress"
-        puts "state: in progress"
-        Rake::Task["round:progress_round"].invoke(genre)
-        Rake::Task["round:progress_round"].reenable
-      elsif genre.state == "ended"
-        puts "state: ended"
-        if Date.today.strftime("%A") == genre.next_day
-          Rake::Task["round:start_stage"].invoke(genre)
-          Rake::Task["round:start_stage"].reenable
+    # start_date = Date.new(2020,2,28)
+    # if Date.today >= start_date
+      # if ['Sunday', 'Wednesday'].include? Date.today.strftime("%A")
+        Genre.all.each do |genre|
+          if genre.state == "in progress"
+            puts "state: in progress"
+            Rake::Task["round:progress_round"].invoke(genre)
+            Rake::Task["round:progress_round"].reenable
+          elsif genre.state == "ended"
+            puts "state: ended"
+            if Date.today.strftime("%A") == genre.next_day
+              Rake::Task["round:start_stage"].invoke(genre)
+              Rake::Task["round:start_stage"].reenable
+            end
+          elsif genre.state == "not started"
+            puts "state: not started"
+            Rake::Task["round:start_stage"].invoke(genre)
+            Rake::Task["round:start_stage"].reenable
+          end
         end
-      elsif genre.state == "not started"
-        puts "state: not started"
-        Rake::Task["round:start_stage"].invoke(genre)
-        Rake::Task["round:start_stage"].reenable
-      end
-    end
+      # end
+    # end
   end
 
   desc "Invoke the set up stage task depending on whether or not byes are needed"
