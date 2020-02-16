@@ -92,7 +92,7 @@
   background: image-url("hipHopGenre.svg");
   background-position: -2px -2px;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 #edm{
   /*background: background: asset-url("edmGenre.svg", image);*/
@@ -100,7 +100,7 @@
   background: image-url("edmGenre.svg");
   background-position: -3.5px -2px;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 #pop{
   /*background: background: asset-url("popGenre.svg", image);*/
@@ -108,7 +108,7 @@
   background: image-url("popGenre.svg");
   background-position: -3.5px -2px;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 #indie{
   /*background: background: asset-url("indieGenre.svg", image);*/
@@ -116,7 +116,7 @@
   background: image-url("indieGenre.svg");
   background-position: -3.5px -2px;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 .genreButton{
   padding-left: 10.5%;
