@@ -5,6 +5,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 # Bundler.require(*Rails.groups)
 Bundler.require(:production)
+# Bundler.require(*Rails.groups)
+# Bundler.require(:production)
 module RecordStage
   class Application < Rails::Application
     RSpotify::authenticate(ENV['SPOTIFY_CLIENT'], ENV['SPOTIFY_SECRET'])
