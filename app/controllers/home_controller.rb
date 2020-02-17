@@ -56,8 +56,6 @@ class HomeController < ApplicationController
   def get_next_round_day
     require 'date'
     today = Date.today.wday
-    days_per_week = 7
-
     # if today is saturday or tuesday
     if today == 6 || today == 2
       return "tomorrow"
@@ -73,13 +71,18 @@ class HomeController < ApplicationController
 
   def get_next_stage_day(genre)
     require 'date'
-    days_per_week = 7
-    if Date.today.strftime("%A") == "Tuesday" && genre.next_day == "Wednesday"
-      return "tomorrow"
-    elsif Date.today.strftime("%A") == "Saturday" && genre.next_day == "Sunday"
-      return "tomorrow"
-    else
-      return genre.next_day
+    if genre.next_day == "Wednesday"
+      if Date.today.strftime("%A") == "Saturday"
+        return "tomorrow"
+      else
+        return "next Sunday"
+      end
+    elsif genre.next_day == "Sunday"
+      if Date.today.strftime("%A") == "Tuesday"
+        return "tomorrow"
+      else
+        return "next Wednesday"
+      end
     end
   end
   

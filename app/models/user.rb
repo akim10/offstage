@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :artist_id, :uniqueness => {:message => "This artist ID already been taken. If you think this is a mistake, please contact help@recordstage.com."}, :allow_nil => true
   # validates_presence_of :genre
   validate :is_real_artist_id
-  # validate :is_under_follower_limit
+  validate :is_under_follower_limit
   
 
 

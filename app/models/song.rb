@@ -12,7 +12,7 @@ class Song < ApplicationRecord
 
   private
   def validate_max_participants
-    errors.add("Reached participant cap.") if Song.count == 64
+    errors.add("Reached participant cap.") if Song.count == 32
   end
 
 end

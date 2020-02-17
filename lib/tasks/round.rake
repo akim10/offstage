@@ -3,21 +3,18 @@ namespace :round do
 
 # ------------ Very initial setup, do at launch ------------ #
 
-desc "Initial setup, stage has not started"
-  task initial_setup: :environment do
-    # Rake::Task["round:create_genres"].invoke
-    # Rake::Task["round:fill_songs"].invoke
-    genres = [
-      { name: 'hiphop', participant_cap: 32 },
-      { name: 'edm', participant_cap: 32 },
-      { name: 'pop', participant_cap: 32 },
-      { name: 'indie', participant_cap: 32 }
-    ]
-    genres.each { |genre| Genre.create! genre }
-  end
-
-
-
+# desc "Initial setup, stage has not started"
+#   task initial_setup: :environment do
+#     # Rake::Task["round:create_genres"].invoke
+#     # Rake::Task["round:fill_songs"].invoke
+#     genres = [
+#       { name: 'hiphop', participant_cap: 32 },
+#       { name: 'edm', participant_cap: 32 },
+#       { name: 'pop', participant_cap: 32 },
+#       { name: 'indie', participant_cap: 32 }
+#     ]
+#     genres.each { |genre| Genre.create! genre }
+#   end
 
 # ------------ State: "not started", do these to start the stage ------------ #
   desc "Determining what action to do for each of the genres"
@@ -33,10 +30,10 @@ desc "Initial setup, stage has not started"
             Rake::Task["round:progress_round"].reenable
           elsif genre.state == "ended"
             puts "state: ended"
-            # if Date.today.strftime("%A") == genre.next_day
+            if !(Date.today.strftime("%A") == genre.next_day)
               Rake::Task["round:start_stage"].invoke(genre)
               Rake::Task["round:start_stage"].reenable
-            # end
+            end
           elsif genre.state == "not started"
             puts "state: not started"
             Rake::Task["round:start_stage"].invoke(genre)
@@ -51,6 +48,16 @@ desc "Initial setup, stage has not started"
   task :start_stage, [:genre] => [:environment] do |task, args|
     # if the number of entered songs is a power of 2
     puts "in start stage"
+    if args[:genre].state == "ended"
+      # do nothing if its ended so the next day resets properly
+    else
+      if args[:genre].next_day == "Sunday"
+        args[:genre].update_attribute("next_day", "Wednesday")
+      elsif args[:genre].next_day == "Wednesday"
+        args[:genre].update_attribute("next_day", "Sunday")
+      end
+    end
+
     unless args[:genre].songs.count < 2
       if args[:genre].songs.count.to_s(2).count('1') == 1
         Rake::Task["round:set_up_stage"].invoke(args[:genre])
@@ -60,11 +67,6 @@ desc "Initial setup, stage has not started"
         Rake::Task["round:set_up_stage_with_byes"].reenable
       end
       args[:genre].update_attribute("state", "in progress")
-    end
-    if args[:genre].next_day == "Sunday"
-      args[:genre].update_attribute("next_day", "Wednesday")
-    elsif args[:genre].next_day == "Wednesday"
-      args[:genre].update_attribute("next_day", "Sunday")
     end
   end
 
@@ -156,9 +158,7 @@ desc "Initial setup, stage has not started"
     Rake::Task["round:calculate_votes"].invoke(args[:genre])
     Rake::Task["round:calculate_votes"].reenable
 
-    if args[:genre].state == "ended"
-      # do nothing if its ended so the next day remains the next week
-    elsif args[:genre].next_day == "Sunday"
+    if args[:genre].next_day == "Sunday"
       args[:genre].update_attribute("next_day", "Wednesday")
     elsif args[:genre].next_day == "Wednesday"
       args[:genre].update_attribute("next_day", "Sunday")
