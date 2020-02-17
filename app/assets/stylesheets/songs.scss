@@ -51,12 +51,11 @@
 .selectRadioButton:not(:disabled):not(.disabled).active{
   /*background-color: #00ADD7;*/
   border: 1.25px solid #00ADD7;
-  background-image: url('selectTrackCheckmark.svg');
+  background: image-url("selectTrackCheckmark.svg");
   background-size: 22px 22px;
   background-position: -.5px -.5px
+  background-repeat: no-repeat;
 }
-
-
 
 .tracklist{
   max-height: 355px;
