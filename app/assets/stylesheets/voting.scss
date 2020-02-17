@@ -112,9 +112,11 @@
 .votingButton:not(:disabled):not(.disabled).active{
   background-color: #00ADD7;
   border: 1.5px solid #00ADD7;
-  background-image: url('checkmark.png');
+  background: image-url("checkmark.png");
   background-size: 40px 40px;
+  background-repeat: no-repeat;
 }
+
 .btn-secondary:focus, .btn-secondary.focus {
   box-shadow: none;
 }
