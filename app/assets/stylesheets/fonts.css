@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'BebasNeue-Bold';
+    src: asset-url(fonts/BebasNeue-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: asset-url(fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: asset-url(fonts/RobotoCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Light";
+    src: asset-url(fonts/RobotoCondensed-Light.ttf);
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: asset-url(fonts/RobotoCondensed-Bold.ttf);
+}
