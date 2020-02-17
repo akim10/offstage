@@ -33,10 +33,10 @@ namespace :round do
             Rake::Task["round:progress_round"].reenable
           elsif genre.state == "ended"
             puts "state: ended"
-            if Date.today.strftime("%A") == genre.next_day
+            # if Date.today.strftime("%A") == genre.next_day
               Rake::Task["round:start_stage"].invoke(genre)
               Rake::Task["round:start_stage"].reenable
-            end
+            # end
           elsif genre.state == "not started"
             puts "state: not started"
             Rake::Task["round:start_stage"].invoke(genre)

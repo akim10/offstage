@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# genres = [
-#   { name: 'hiphop', participant_cap: 64 },
-#   { name: 'edm', participant_cap: 64 },
-#   { name: 'pop', participant_cap: 64 },
-#   { name: 'indie', participant_cap: 64 }
-# ]
-# genres.each { |genre| Genre.create! genre }
+genres = [
+  { name: 'hiphop', participant_cap: 64 },
+  { name: 'edm', participant_cap: 64 },
+  { name: 'pop', participant_cap: 64 },
+  { name: 'indie', participant_cap: 64 }
+]
+genres.each { |genre| Genre.create! genre }
 
 
 # firstly delete any existing data
@@ -21,23 +21,23 @@
 # now build up an array
 
 
-users = [
-  {id: 2, password: 'abcdefgh', email:'1-@test.com', uid:'user-1', provider: 'spotify', artist_id: '4tZwfgrHOc3mvqYlEYSvVi'},
-  {id: 3, password: 'abcdefgh', email:'2-@test.com', uid:'user-2', provider: 'spotify', artist_id: '0MeLMJJcouYXCymQSHPn8g'},
-  {id: 4, password: 'abcdefgh', email:'3-@test.com', uid:'user-3', provider: 'spotify', artist_id: '2QsynagSdAqZj3U9HgDzjD'},
-  {id: 5, password: 'abcdefgh', email:'4-@test.com', uid:'user-4', provider: 'spotify', artist_id: '3qNVuliS40BLgXGxhdBdqu'},
-  {id: 6, password: 'abcdefgh', email:'5-@test.com', uid:'user-5', provider: 'spotify', artist_id: '6VD4UEUPvtsemqD3mmTqCR'},
-  {id: 7, password: 'abcdefgh', email:'6-@test.com', uid:'user-6', provider: 'spotify', artist_id: '6qqNVTkY8uBg9cP3Jd7DAH'},
-  {id: 8, password: 'abcdefgh', email:'7-@test.com', uid:'user-7', provider: 'spotify', artist_id: '4F84IBURUo98rz4r61KF70'},
-  {id: 9, password: 'abcdefgh', email:'8-@test.com', uid:'user-8', provider: 'spotify', artist_id: '3WrFJ7ztbogyGnTHbHJFl2'},
-  {id: 10,password: 'abcdefgh',  email:'9-@test.com', uid:'user-9', provider: 'spotify', artist_id: '20JZFwl6HVl6yg8a4H3ZqK'},
-  {id: 11,password: 'abcdefgh',  email:'10-@test.com', uid:'user-10', provider: 'spotify', artist_id: '3TOqt5oJwL9BE2NG9MEwDa'},
-  {id: 12,password: 'abcdefgh',  email:'11-@test.com', uid:'user-11', provider: 'spotify', artist_id: '6LuN9FCkKOj5PcnpouEgny'},
-  {id: 13,password: 'abcdefgh',  email:'12-@test.com', uid:'user-12', provider: 'spotify', artist_id: '2q1NYivkWMAeUxWZiCTyFR'},
-  {id: 14,password: 'abcdefgh',  email:'13-@test.com', uid:'user-13', provider: 'spotify', artist_id: '3UvcmAOZt64oKpP95f6MMM'},
-  {id: 15,password: 'abcdefgh',  email:'14-@test.com', uid:'user-14', provider: 'spotify', artist_id: '4mYFgEjpQT4IKOrjOUKyXu'},
-  {id: 16,password: 'abcdefgh',  email:'15-@test.com', uid:'user-15', provider: 'spotify', artist_id: '06HL4z0CvFAxyc27GXpf02'}
-]
+# users = [
+#   {id: 2, password: 'abcdefgh', email:'1-@test.com', uid:'user-1', provider: 'spotify', artist_id: '4tZwfgrHOc3mvqYlEYSvVi'},
+#   {id: 3, password: 'abcdefgh', email:'2-@test.com', uid:'user-2', provider: 'spotify', artist_id: '0MeLMJJcouYXCymQSHPn8g'},
+#   {id: 4, password: 'abcdefgh', email:'3-@test.com', uid:'user-3', provider: 'spotify', artist_id: '2QsynagSdAqZj3U9HgDzjD'},
+#   {id: 5, password: 'abcdefgh', email:'4-@test.com', uid:'user-4', provider: 'spotify', artist_id: '3qNVuliS40BLgXGxhdBdqu'},
+#   {id: 6, password: 'abcdefgh', email:'5-@test.com', uid:'user-5', provider: 'spotify', artist_id: '6VD4UEUPvtsemqD3mmTqCR'},
+#   {id: 7, password: 'abcdefgh', email:'6-@test.com', uid:'user-6', provider: 'spotify', artist_id: '6qqNVTkY8uBg9cP3Jd7DAH'},
+#   {id: 8, password: 'abcdefgh', email:'7-@test.com', uid:'user-7', provider: 'spotify', artist_id: '4F84IBURUo98rz4r61KF70'},
+#   {id: 9, password: 'abcdefgh', email:'8-@test.com', uid:'user-8', provider: 'spotify', artist_id: '3WrFJ7ztbogyGnTHbHJFl2'},
+#   {id: 10,password: 'abcdefgh',  email:'9-@test.com', uid:'user-9', provider: 'spotify', artist_id: '20JZFwl6HVl6yg8a4H3ZqK'},
+#   {id: 11,password: 'abcdefgh',  email:'10-@test.com', uid:'user-10', provider: 'spotify', artist_id: '3TOqt5oJwL9BE2NG9MEwDa'},
+#   {id: 12,password: 'abcdefgh',  email:'11-@test.com', uid:'user-11', provider: 'spotify', artist_id: '6LuN9FCkKOj5PcnpouEgny'},
+#   {id: 13,password: 'abcdefgh',  email:'12-@test.com', uid:'user-12', provider: 'spotify', artist_id: '2q1NYivkWMAeUxWZiCTyFR'},
+#   {id: 14,password: 'abcdefgh',  email:'13-@test.com', uid:'user-13', provider: 'spotify', artist_id: '3UvcmAOZt64oKpP95f6MMM'},
+#   {id: 15,password: 'abcdefgh',  email:'14-@test.com', uid:'user-14', provider: 'spotify', artist_id: '4mYFgEjpQT4IKOrjOUKyXu'},
+#   {id: 16,password: 'abcdefgh',  email:'15-@test.com', uid:'user-15', provider: 'spotify', artist_id: '06HL4z0CvFAxyc27GXpf02'}
+# ]
 
 
 # # # spotify:artist:4tZwfgrHOc3mvqYlEYSvVi
@@ -64,11 +64,11 @@ users = [
 # now build up an array
 
 
-songs = [
-  {active: true, track_id: '0DiWol3AO6WpXZgp0goxAV', votes: 0, pair_id: nil, user_id: 2, genre_id: 1 },
-  {active: true, track_id: '62CprXvSWsKBvYu3Yba55A', votes: 0, pair_id: nil, user_id: 3, genre_id: 1 },
-  {active: true, track_id: '6A9mKXlFRPMPem6ygQSt7z', votes: 0, pair_id: nil, user_id: 4, genre_id: 1 },
-  {active: true, track_id: '4ytyLpIwUXbdFsNOvgNnmP', votes: 0, pair_id: nil, user_id: 5, genre_id: 1 }
+# songs = [
+#   {active: true, track_id: '0DiWol3AO6WpXZgp0goxAV', votes: 0, pair_id: nil, user_id: 2, genre_id: 1 },
+#   {active: true, track_id: '62CprXvSWsKBvYu3Yba55A', votes: 0, pair_id: nil, user_id: 3, genre_id: 1 },
+#   {active: true, track_id: '6A9mKXlFRPMPem6ygQSt7z', votes: 0, pair_id: nil, user_id: 4, genre_id: 1 },
+#   {active: true, track_id: '4ytyLpIwUXbdFsNOvgNnmP', votes: 0, pair_id: nil, user_id: 5, genre_id: 1 }
   # {active: true, track_id: '3haS1MDe2Zh8jJaeiiymSt', votes: 0, pair_id: nil, user_id: 6, genre_id: 2 },
   # {active: true, track_id: '6cLxofxCjrFpQYtifjK5Vf', votes: 0, pair_id: nil, user_id: 7, genre_id: 2 },
   # {active: true, track_id: '7i6r9KotUPQg3ozKKgEPIN', votes: 0, pair_id: nil, user_id: 8, genre_id: 2 },
@@ -100,4 +100,4 @@ songs = [
 # spotify:track:4t0OI7XrODjSkAu3bTPmWj
 
 #now process the array using an iterator
-songs.each { |song| Song.create! song }
+# songs.each { |song| Song.create! song }
