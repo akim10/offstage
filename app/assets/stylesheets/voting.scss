@@ -16,6 +16,14 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+
+@media only screen and (max-height: 510px) {
+  .enterSoundStageText {
+    position: relative;
+  }
+}
+
+
 .votingContent{
   animation-duration: 1.25s;
   animation-delay: 0.5s;

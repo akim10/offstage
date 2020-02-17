@@ -50,4 +50,9 @@ $(document).on("turbolinks:load", function() {
     console.log("as")
   }); 
 
+
+  if ($(".submitSongPage")[0]){
+    $("html").css("overflow-y", "scroll");
+  }
+
 });

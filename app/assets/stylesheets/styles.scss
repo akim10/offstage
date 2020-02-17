@@ -2,10 +2,19 @@
 html{
   background-color: #161616;
   overflow-x: hidden;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   height: 100%;
   width: 100%;
 }
+
+
+@media only screen and (min-height: 620px) {
+  html {
+    overflow-y: hidden;
+  }
+}
+
+
 body{
   background-color: #161616;
   font-family: 'RobotoCondensed-Light', Sans-Serif;

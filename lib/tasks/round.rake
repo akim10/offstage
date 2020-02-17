@@ -8,10 +8,10 @@ desc "Initial setup, stage has not started"
     # Rake::Task["round:create_genres"].invoke
     # Rake::Task["round:fill_songs"].invoke
     genres = [
-      { name: 'hiphop', participant_cap: 64 },
-      { name: 'edm', participant_cap: 64 },
-      { name: 'pop', participant_cap: 64 },
-      { name: 'indie', participant_cap: 64 }
+      { name: 'hiphop', participant_cap: 32 },
+      { name: 'edm', participant_cap: 32 },
+      { name: 'pop', participant_cap: 32 },
+      { name: 'indie', participant_cap: 32 }
     ]
     genres.each { |genre| Genre.create! genre }
   end
@@ -56,7 +56,6 @@ desc "Initial setup, stage has not started"
         Rake::Task["round:set_up_stage"].invoke(args[:genre])
         Rake::Task["round:set_up_stage"].reenable
       else
-        puts "got past conditional 2"
         Rake::Task["round:set_up_stage_with_byes"].invoke(args[:genre])
         Rake::Task["round:set_up_stage_with_byes"].reenable
       end
@@ -214,7 +213,8 @@ desc "Initial setup, stage has not started"
         args[:genre].update_attribute("state", "ended")
         last_song = genre.songs.active.first
         if Winner.where(genre: genre.name).count > 0
-          Winner.where(genre: genre.name).first.update_attribute('active', false)
+          # Winner.where(genre: genre.name).first.update_attribute('active', false)
+          Winner.where(genre: genre.name).update_all('active': false)
         end
         winning_song = {active: true, genre: genre.name, track_id: last_song.track_id, artist_id: last_song.user.artist_id, user_id: last_song.user.id, votes: last_song.votes, round: last_song.round + 1}
         Winner.create! winning_song
