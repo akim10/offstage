@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :artist_id, :uniqueness => {:message => "This artist ID already been taken. If you think this is a mistake, please contact help@recordstage.com."}, :allow_nil => true
   # validates_presence_of :genre
   validate :is_real_artist_id
-  # validate :is_under_follower_limit
+  validate :is_under_follower_limit
   
 
 
@@ -31,16 +31,6 @@ class User < ApplicationRecord
     end
   end
 
-  def is_under_follower_limit
-    artist = RSpotify::Artist.find(self.artist_id)
-    if (artist.followers["total"] > 100000)
-      errors.add(:artist_id, 'Artists cannot have more than 100000 followers.')
-      return false
-    else
-      return true
-    end
-  end
-
   def is_real_artist_id
     artist =  RSpotify::Artist.find(self.artist_id)
     return true
@@ -48,6 +38,18 @@ class User < ApplicationRecord
     errors.clear
     errors.add(:artist_id, "Sorry, we couldn't find that artist, please make sure the Artist URI is valid.")
     return false
+  end
+
+  def is_under_follower_limit
+    unless self.artist_id.nil?
+      if errors.blank?
+        artist = RSpotify::Artist.find(self.artist_id)
+        if (artist.followers["total"] > 150000)
+          errors.clear
+          errors.add(:artist_id, 'Artist cannot have more than 150,000 followers.')
+        end
+      end
+    end
   end
 
 end
