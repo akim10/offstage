@@ -12,7 +12,6 @@ module RecordStage
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.i18n.fallbacks = true
-    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     config.assets.initialize_on_precompile = false
     config.force_ssl = true
 

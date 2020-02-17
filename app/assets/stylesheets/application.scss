@@ -11,27 +11,27 @@
 
 @font-face {
     font-family: 'BebasNeue-Bold';
-    src: asset_url(fonts/BebasNeue-Bold.ttf);
+    src: asset-url('fonts/BebasNeue-Bold.ttf');
 }
 
 @font-face {
     font-family: 'BebasNeue-Regular';
-    src: asset_url(fonts/BebasNeue-Regular.ttf);
+    src: asset-url('fonts/BebasNeue-Regular.ttf');
 }
 
 @font-face {
     font-family: "RobotoCondensed-Regular";
-    src: asset_url(fonts/RobotoCondensed-Regular.ttf);
+    src: asset-url('fonts/RobotoCondensed-Regular.ttf');
 }
 
 @font-face {
     font-family: "RobotoCondensed-Light";
-    src: asset_url(fonts/RobotoCondensed-Light.ttf);
+    src: asset-url('fonts/RobotoCondensed-Light.ttf');
 }
 
 @font-face {
     font-family: "RobotoCondensed-Bold";
-    src: asset_url(fonts/RobotoCondensed-Bold.ttf);
+    src: asset-url('fonts/RobotoCondensed-Bold.ttf');
 }
 
 
