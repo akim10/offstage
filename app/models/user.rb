@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :artist_id, :uniqueness => {:message => "This artist ID already been taken. If you think this is a mistake, please contact help@recordstage.com."}, :allow_nil => true
   # validates_presence_of :genre
   validate :is_real_artist_id
-  validate :is_under_follower_limit
+  # validate :is_under_follower_limit
   
 
 
@@ -32,16 +32,17 @@ class User < ApplicationRecord
   end
 
   def is_under_follower_limit
-    if errors.blank?
-      artist = RSpotify::Artist.find(self.artist_id)
-      if (artist.followers["total"] > 100000)
-        errors.add(:artist_id, 'Artists cannot have more than 100000 followers.')
-      end
+    artist = RSpotify::Artist.find(self.artist_id)
+    if (artist.followers["total"] > 100000)
+      errors.add(:artist_id, 'Artists cannot have more than 100000 followers.')
+      return false
+    else
+      return true
     end
   end
 
   def is_real_artist_id
-    artist =  RSpotify::Artist.find((self.artist_id))
+    artist =  RSpotify::Artist.find(self.artist_id)
     return true
   rescue RestClient::NotFound, RestClient::BadRequest
     errors.clear

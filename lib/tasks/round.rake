@@ -20,9 +20,9 @@ namespace :round do
   desc "Determining what action to do for each of the genres"
   task determine_action: :environment do
     require 'date'
-    # start_date = Date.new(2020,2,28)
-    # if Date.today >= start_date
-      # if ['Sunday', 'Wednesday'].include? Date.today.strftime("%A")
+    start_date = Date.new(2020,2,28)
+    if Date.today >= start_date
+      if ['Sunday', 'Wednesday'].include? Date.today.strftime("%A")
         Genre.all.each do |genre|
           if genre.state == "in progress"
             puts "state: in progress"
@@ -40,8 +40,8 @@ namespace :round do
             Rake::Task["round:start_stage"].reenable
           end
         end
-      # end
-    # end
+      end
+    end
   end
 
   desc "Invoke the set up stage task depending on whether or not byes are needed"
