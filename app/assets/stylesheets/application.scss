@@ -1,6 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
-@import "fonts";
+/*@import "fonts";*/
 @import "styles";
 @import "splash";
 @import "devise";
@@ -9,6 +9,30 @@
 @import "users";
 @import "animate";
 
+@font-face {
+    font-family: 'BebasNeue-Bold';
+    src: asset_url(fonts/BebasNeue-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: asset_url(fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: asset_url(fonts/RobotoCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Light";
+    src: asset_url(fonts/RobotoCondensed-Light.ttf);
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Bold";
+    src: asset_url(fonts/RobotoCondensed-Bold.ttf);
+}
 
 
 /*
