@@ -4,13 +4,13 @@
     <title>Group 4</title>
     <desc>Created with Sketch.</desc>
     <g id="dev-handoff" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Enter-Nex---Upload-Song-Copy-21" transform="translate(-466.000000, -243.000000)">
-            <g id="Group-4" transform="translate(466.000000, 243.000000)">
+        <g id="Enter-Nex---Upload-Song-Copy-21" transform="translate(-466.000000, -286.000000)">
+            <g id="Group-4" transform="translate(466.000000, 286.000000)">
                 <rect id="Rectangle-Copy-3" fill="#101010" x="0" y="0" width="158" height="158" rx="1.6"></rect>
-                <text id="EDM" font-family="BebasNeue-Bold, Bebas Neue" font-size="32" font-weight="bold" letter-spacing="1" fill="#FFFFFF">
-                    <tspan x="56.428" y="86">Electronic</tspan>
+                <text id="ELECTRONIC" font-family="BebasNeue-Bold, Bebas Neue" font-size="28" font-weight="bold" letter-spacing="0.875" fill="#FFFFFF">
+                    <tspan x="23.973" y="86">ELECTRONIC</tspan>
                 </text>
-                <line x1="56" y1="102" x2="102" y2="102" id="Line-Copy-2" stroke="#00ADD7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="24" y1="102" x2="132" y2="102" id="Line-Copy-2" stroke="#00ADD7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
             </g>
         </g>
     </g>
