@@ -3,18 +3,18 @@ namespace :round do
 
 # ------------ Very initial setup, do at launch ------------ #
 
-# desc "Initial setup, stage has not started"
-#   task initial_setup: :environment do
-#     # Rake::Task["round:create_genres"].invoke
-#     # Rake::Task["round:fill_songs"].invoke
-#     genres = [
-#       { name: 'hiphop', participant_cap: 64 },
-#       { name: 'edm', participant_cap: 64 },
-#       { name: 'pop', participant_cap: 64 },
-#       { name: 'indie', participant_cap: 64 }
-#     ]
-#     genres.each { |genre| Genre.create! genre }
-#   end
+desc "Initial setup, stage has not started"
+  task initial_setup: :environment do
+    # Rake::Task["round:create_genres"].invoke
+    # Rake::Task["round:fill_songs"].invoke
+    genres = [
+      { name: 'hiphop', participant_cap: 64 },
+      { name: 'edm', participant_cap: 64 },
+      { name: 'pop', participant_cap: 64 },
+      { name: 'indie', participant_cap: 64 }
+    ]
+    genres.each { |genre| Genre.create! genre }
+  end
 
 
 
