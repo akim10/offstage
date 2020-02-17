@@ -6,7 +6,7 @@ class Genre < ApplicationRecord
     if self.id == 1
       return "Hip Hop"
     elsif self.id == 2
-      return "EDM"
+      return "Electronic"
     elsif self.id == 3
       return "Pop"
     elsif self.id == 4

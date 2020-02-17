@@ -4,7 +4,7 @@
     <div class="col-12 wrap fullHeight">
       <div class="inner fullWidth centered groupInfo">
         <!-- add @round for number -->
-        <h1 class="stateName"><%= @current_genre.name %> </h1>
+        <h1 class="stateName"><%= @current_genre_name %> </h1>
         
         <% if current_user.song_queue[@current_genre.name].empty? %>
           <p class="groupInfoSubtext">
