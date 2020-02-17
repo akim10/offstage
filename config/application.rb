@@ -11,9 +11,7 @@ module RecordStage
     RSpotify::authenticate(ENV['SPOTIFY_CLIENT'], ENV['SPOTIFY_SECRET'])
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    config.i18n.fallbacks = true
-    config.assets.initialize_on_precompile = false
-    config.force_ssl = true
+
 
     # config.i18n.fallbacks = [I18n.default_locale]9
 
