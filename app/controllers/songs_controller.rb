@@ -20,8 +20,11 @@ class SongsController < ApplicationController
     if current_user.song
       current_user.song.delete
     end
-    @song.save!
-    redirect_to root_path
+    if @song.save
+      redirect_to root_path
+    else
+      redirect_to(root_path, :notice => @song.errors.messages[:song][0])
+    end
   end
 
   def destroy
