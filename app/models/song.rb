@@ -12,7 +12,7 @@ class Song < ApplicationRecord
 
   private
   def validate_max_participants
-    if Song.where(genre_id: self.genre_id).count >= 0
+    if Song.where(genre_id: self.genre_id).count >= 32
       if errors.blank?
         errors.add(:song, "Reached participant cap for this genre.")
         return false
