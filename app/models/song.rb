@@ -5,7 +5,7 @@ class Song < ApplicationRecord
   validates :track_id, uniqueness: true
   validates_presence_of :user
   validates_presence_of :genre
-  before_create :validate_max_participants
+  # before_create :validate_max_participants
 
   scope :active, -> { where(active: true) }
   scope :inactive, -> { where(active: false) }

@@ -44,9 +44,9 @@ class User < ApplicationRecord
     unless self.artist_id.nil?
       if errors.blank?
         artist = RSpotify::Artist.find(self.artist_id)
-        if (artist.followers["total"] > 150000)
+        if (artist.followers["total"] > 100000)
           errors.clear
-          errors.add(:artist_id, 'Artist cannot have more than 150,000 followers.')
+          errors.add(:artist_id, 'Artist cannot have more than 100,000 followers.')
         end
       end
     end
