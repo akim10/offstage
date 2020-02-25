@@ -3,18 +3,13 @@ namespace :round do
 
 # ------------ Very initial setup, do at launch ------------ #
 
-# desc "Initial setup, stage has not started"
-#   task initial_setup: :environment do
-#     # Rake::Task["round:create_genres"].invoke
-#     # Rake::Task["round:fill_songs"].invoke
-#     genres = [
-#       { name: 'hiphop', participant_cap: 32 },
-#       { name: 'edm', participant_cap: 32 },
-#       { name: 'pop', participant_cap: 32 },
-#       { name: 'indie', participant_cap: 32 }
-#     ]
-#     genres.each { |genre| Genre.create! genre }
-#   end
+  desc "Send emails out"
+  task send_emails: :environment do
+    User.all.each do |user|
+      UserMailer.round_email(user).deliver_now
+    end
+    puts "sent email"
+  end
 
 # ------------ State: "not started", do these to start the stage ------------ #
   desc "Determining what action to do for each of the genres"
