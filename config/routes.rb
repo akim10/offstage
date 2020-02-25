@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions", omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :users, only: [:new, :create, :edit, :select_current_genre]
+  resources :users, only: [:new, :create, :edit, :select_current_genre, :toggle_notifications]
   resources :users do
     collection do
-        # patch :select_current_genre
         put :select_current_genre
+        patch :toggle_notifications
       end
   end
   resources :songs, only: [:new, :create, :edit, :destroy]

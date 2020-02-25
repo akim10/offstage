@@ -29,6 +29,15 @@ class UsersController < ApplicationController
     end 
   end
 
+  def toggle_notifications
+    @user = current_user
+    if @user.email_preference == "round"
+      @user.update_attribute("email_preference", "off")
+    else
+      @user.update_attribute("email_preference", "round")
+    end
+    redirect_to user_path(current_user)
+  end
 
   def select_current_genre
     @user = current_user

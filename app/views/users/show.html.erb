@@ -73,14 +73,25 @@
         </div>
        <div class="col-12 col-md-8">
           <div class="marginBottom32">
-            <p class="accountLabel">Questions/Feedback</p>
-            <%= mail_to "help@recordstage.com", "Contact", class:"accountField", target: "_blank" %>
+            <p class="accountLabel">Email Me When a New Round Begins</p>
+              <% if current_user.email_preference == "round" %>
+                <div class="accountField"> 
+                Enabled. <%= link_to "Turn Off", toggle_notifications_users_path(current_user), method: :patch, class:""%>
+                </div>
+              <% else %>
+                <div class="accountField"> 
+                  Disabled. <%= link_to "Turn On", toggle_notifications_users_path(current_user), method: :patch, class:""%>
+                </div>
+              <% end %> 
+          </div>
+          <div class="marginBottom32">
+            <p class="accountLabel">Questions/Feedback?</p>
+            <%= mail_to "andrewkim124@gmail.com", "Contact", class:"accountField", target: "_blank" %>
           </div>
           <div>
             <p class="accountLabel">Account</p>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"accountField"%>
           </div>
-
         </div>
       </div>
       <br />

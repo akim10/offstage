@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validate :is_real_artist_id
   validate :is_under_follower_limit
   
-
+  scope :round_emails, -> { where(email_preference: "round") }
 
   private
   def self.from_omniauth(auth)
