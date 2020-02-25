@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'recordstagehelp@gmail.com'
+  default from: 'Recordstage'
 
   def round_email(user)
     @user = user

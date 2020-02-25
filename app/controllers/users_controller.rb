@@ -31,11 +31,15 @@ class UsersController < ApplicationController
 
   def toggle_notifications
     @user = current_user
-    if @user.email_preference == "round"
-      @user.update_attribute("email_preference", "off")
+    puts current_user.email_preference
+    if current_user.email_preference == "round"
+      puts "changing to off"
+      current_user.update_attribute("email_preference", "off")
     else
-      @user.update_attribute("email_preference", "round")
+      puts "changing to round"
+      current_user.update_attribute("email_preference", "round")
     end
+    puts "redirecting..."
     redirect_to user_path(current_user)
   end
 
