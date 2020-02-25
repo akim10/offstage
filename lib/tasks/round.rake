@@ -7,8 +7,8 @@ namespace :round do
   task send_emails: :environment do
     # User.round_emails.each do |user|
     UserMailer.round_email(User.first).deliver_now
-    UserMailer.round_email(User.fourth).deliver_now
-    UserMailer.round_email(User.fifth).deliver_now
+    # UserMailer.round_email(User.fourth).deliver_now
+    # UserMailer.round_email(User.fifth).deliver_now
     # end
     puts "sent email"
   end
