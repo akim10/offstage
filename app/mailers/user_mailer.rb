@@ -3,6 +3,6 @@ class UserMailer < ApplicationMailer
 
   def round_email(user)
     @user = user
-    mail(to: @user.email, subject: 'Recordstage Voting Starts Now!')
+    mail(from: 'Recordstage',to: @user.email, subject: 'Recordstage Voting Starts Now!')
   end
 end

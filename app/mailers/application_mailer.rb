@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'recordstagehelp@gmail.com'
+  default from: 'Recordstage'
   # layout 'mailer'
 end
