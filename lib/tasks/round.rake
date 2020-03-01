@@ -5,9 +5,9 @@ namespace :round do
 
   desc "Send emails out"
   task send_emails: :environment do
-    User.round_emails.each do |user|
-      UserMailer.round_email(user).deliver_now
-    end
+    # User.round_emails.each do |user|
+      UserMailer.round_email(User.first).deliver_now
+    # end
     puts "sent email"
   end
 
@@ -15,28 +15,28 @@ namespace :round do
   desc "Determining what action to do for each of the genres"
   task determine_action: :environment do
     require 'date'
-    start_date = Date.new(2020,2,28)
-    if Date.today >= start_date
-      if ['Sunday', 'Wednesday'].include? Date.today.strftime("%A")
-        Genre.all.each do |genre|
-          if genre.state == "in progress"
-            puts "state: in progress"
-            Rake::Task["round:progress_round"].invoke(genre)
-            Rake::Task["round:progress_round"].reenable
-          elsif genre.state == "ended"
-            puts "state: ended"
-            if !(Date.today.strftime("%A") == genre.next_day)
-              Rake::Task["round:start_stage"].invoke(genre)
-              Rake::Task["round:start_stage"].reenable
-            end
-          elsif genre.state == "not started"
-            puts "state: not started"
+    # start_date = Date.new(2020,2,28)
+    # if Date.today >= start_date
+    if ['Sunday', 'Wednesday'].include? Date.today.strftime("%A")
+      Genre.all.each do |genre|
+        if genre.state == "in progress"
+          puts "state: in progress"
+          Rake::Task["round:progress_round"].invoke(genre)
+          Rake::Task["round:progress_round"].reenable
+        elsif genre.state == "ended"
+          puts "state: ended"
+          if !(Date.today.strftime("%A") == genre.next_day)
             Rake::Task["round:start_stage"].invoke(genre)
             Rake::Task["round:start_stage"].reenable
           end
+        elsif genre.state == "not started"
+          puts "state: not started"
+          Rake::Task["round:start_stage"].invoke(genre)
+          Rake::Task["round:start_stage"].reenable
         end
       end
     end
+    # end
   end
 
   desc "Invoke the set up stage task depending on whether or not byes are needed"
