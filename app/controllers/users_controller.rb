@@ -29,6 +29,17 @@ class UsersController < ApplicationController
     end 
   end
 
+  def toggle_announcement_notifications
+    @user = current_user
+    if @user.announcement_email_preference == "announcement"
+      @user.update_attribute("announcement_email_preference", "off")
+    else
+      @user.update_attribute("announcement_email_preference", "announcement")
+    end
+    redirect_to user_path(current_user)
+  end
+
+  
   def toggle_notifications
     @user = current_user
     puts current_user.email_preference

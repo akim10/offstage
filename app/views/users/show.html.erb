@@ -73,7 +73,19 @@
         </div>
        <div class="col-12 col-md-8">
           <div class="marginBottom32">
-            <p class="accountLabel">Email Me When a New Round Begins</p>
+            <p class="accountLabel">Announcement Emails</p>
+              <% if current_user.announcement_email_preference == "announcement" %>
+                <div class="accountField"> 
+                Enabled. <%= link_to "Turn Off", toggle_announcement_notifications_users_path(current_user), method: :patch, class:""%>
+                </div>
+              <% else %>
+                <div class="accountField"> 
+                  Disabled. <%= link_to "Turn On", toggle_announcement_notifications_users_path(current_user), method: :patch, class:""%>
+                </div>
+              <% end %> 
+          </div>
+          <div class="marginBottom32">
+            <p class="accountLabel">New Round Emails</p>
               <% if current_user.email_preference == "round" %>
                 <div class="accountField"> 
                 Enabled. <%= link_to "Turn Off", toggle_notifications_users_path(current_user), method: :patch, class:""%>
