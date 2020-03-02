@@ -14,6 +14,7 @@ class User < ApplicationRecord
   validate :is_under_follower_limit
   
   scope :round_emails, -> { where(email_preference: "round") }
+  scope :announcement_emails, -> { where(announcement_email_preference: "announcement") }
 
   private
   def self.from_omniauth(auth)
