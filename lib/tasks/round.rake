@@ -35,9 +35,9 @@ namespace :round do
           Rake::Task["round:start_stage"].reenable
         end
       end
-      User.round_emails.each do |user|
-        UserMailer.round_email(user).deliver_now
-      end
+      # User.round_emails.each do |user|
+      UserMailer.round_email(User.first).deliver_now
+      # end
     end
     # end
   end
