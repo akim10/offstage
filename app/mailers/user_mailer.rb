@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
 
   def round_email(user)
     @user = user
-    mail(from: 'Recordstage <recordstagehelp@gmail.com>',to: "noreply@recordstage.com", :bcc => [User.round_emails.select("email")], subject: 'New Recordstage Round Starting')
+    mail(from: 'Recordstage <recordstagehelp@gmail.com>',to: "noreply@recordstage.com", :bcc => User.round_emails.select("email").to_a, subject: 'New Recordstage Round Starting')
   end
   # def announcement_email(user)
   #   @user = user
