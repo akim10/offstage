@@ -3,16 +3,16 @@ namespace :round do
 
 # ------------ Very initial setup, do at launch ------------ #
 
-  desc "Send emails out"
-  task send_emails: :environment do
-    # User.round_emails.each do |user|
-    UserMailer.round_email(0,50).deliver_now
-    UserMailer.round_email(50,100).deliver_now
-    UserMailer.round_email(100,150).deliver_now
-    UserMailer.round_email(150,200).deliver_now
-    # end
-    puts "sent email"
-  end
+#   desc "Send emails out"
+#   task send_emails: :environment do
+#     # User.round_emails.each do |user|
+#     UserMailer.round_email(0,50).deliver_now
+#     UserMailer.round_email(50,100).deliver_now
+#     UserMailer.round_email(100,150).deliver_now
+#     UserMailer.round_email(150,200).deliver_now
+#     # end
+#     puts "sent email"
+#   end
 
 # ------------ State: "not started", do these to start the stage ------------ #
   desc "Determining what action to do for each of the genres"
@@ -38,10 +38,10 @@ namespace :round do
           Rake::Task["round:start_stage"].reenable
         end
       end
-      UserMailer.round_email(0,50).deliver_now
-      UserMailer.round_email(50,100).deliver_now
-      UserMailer.round_email(100,150).deliver_now
-      UserMailer.round_email(150,200).deliver_now
+#       UserMailer.round_email(0,50).deliver_now
+#       UserMailer.round_email(50,100).deliver_now
+#       UserMailer.round_email(100,150).deliver_now
+#       UserMailer.round_email(150,200).deliver_now
     end
     # end
   end
