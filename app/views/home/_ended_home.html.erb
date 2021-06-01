@@ -19,7 +19,7 @@
         <% if @song && @artist && @on_submitted_genre%>
           <%= link_to "#{@song.name} by #{@artist.name}", "https://open.spotify.com/track/#{@song.id}", target: "_blank"%> has been submitted to the next <strong><%=@submitted_genre_name%></strong> Recordstage.
         <% else %>
-          The next <%= @current_genre_name %> Recordstage (<%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %> Songs Entered) starts <%=@next_stage_day %>.
+          The next <%= @current_genre_name %> Recordstage (<%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %> Songs Entered) starts soon.
           <% unless @current_genre.participant_cap == @current_genre.songs.count %>
             <% if current_user.artist_id? %>
               <%= link_to "Enter now", new_song_path %>
