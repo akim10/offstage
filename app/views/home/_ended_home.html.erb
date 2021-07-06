@@ -19,9 +19,9 @@
             <div class="centered embeddedSong show-md">
               <iframe src="https://open.spotify.com/embed/track/<%= @winning_song.id %>" width="92%" height="92px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </div>
-            <%= link_to "View Artist", "https://open.spotify.com/artist/#{@winning_artist.id}", class: "btn btn-primary homeButton", target: "_blank"%>
+            <%= link_to "View Artist", "https://open.spotify.com/artist/#{@winning_artist.id}", class: "btn btn-primary homeButton viewArtistButton", target: "_blank"%>
 
-            <%= link_to "Change Genre", select_current_genre_users_path(current_user), method: :put, class: "btn btn-outline-primary homeButton"%>
+            <%= link_to "Change Genre", select_current_genre_users_path(current_user), method: :put, class: "btn btn-outline-primary homeButton changeGenreButton"%>
         </div>
       </div>
 
@@ -32,14 +32,17 @@
   <div class="darkGreyBackground2">
     <div class="row recordstageFooter fixed-bottom">
       <div class="footerContent col-12">
-        <h3 id="countdown">&nbsp;</h3><span class="hide" id="until">Until Next Bracket</span>
+        <h3 id="countdown">&nbsp;</h3>
+        <!-- <span class="hide" id="until">Until Next Bracket</span> -->
         <div class="nextBracketDay hidden"><%= @next_bracket_day %></div>
         <div class="floatRight">
           <% if current_user.song %>
-              <span id="songsEntered"><span id="songEntry"><%= @current_user.song.genre.format_genre %> Entry - <strong><%=truncate(RSpotify::Track.find(current_user.song.track_id).name, :length => 23)%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;</span>
+              <span id="songsEntered"><span id="songEntry"><%= @current_user.song.genre.format_genre %> Entry (<%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %>) -
+
+              <strong><%=truncate(RSpotify::Track.find(current_user.song.track_id).name, :length => 23)%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;</span>
               <%= link_to "Remove", songs_destroy_path %> </span>
           <% else %>
-              <span id="songsEntered"><span class="hide"><%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %> Songs Entered &nbsp;</span>
+              <span id="songsEntered"><span class="hide"><%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %> <%= @current_genre.format_genre %> Songs Entered &nbsp;</span>
               <%= link_to "Enter Now", songs_path%></span>
           <% end %>
         </div>

@@ -115,3 +115,9 @@
       font-family: "RobotoCondensed-Bold", sans-serif;
   }
 }
+
+@media screen and (max-width: 400px){
+   .fullPageRounds{
+    transform: translateY(12%);
+   }
+}

@@ -20,7 +20,7 @@ namespace :round do
     require 'date'
     start_date = Date.new(2021,6,19)
     if Date.today >= start_date
-      if ['Monday', 'Friday'].include? Date.today.strftime("%A")
+      # if ['Monday', 'Friday'].include? Date.today.strftime("%A")
         Genre.all.each do |genre|
           if genre.state == "in progress"
             puts "state: in progress"
@@ -38,7 +38,7 @@ namespace :round do
             Rake::Task["round:start_stage"].reenable
           end
         end
-      end
+      # end
     end
   end
 
@@ -315,7 +315,7 @@ namespace :round do
 
         # find the next highest power of 2
         # if song_total < 32
-        next_highest_cap = 32
+        next_highest_cap = 2
         # else
           # next_highest_cap = 2**(song_total.bit_length)
         # end
@@ -326,6 +326,9 @@ namespace :round do
         filler_songs = []
         # random_search_result = RSpotify::Track.search("genre:"+genre_words.sample, offset: rand(0..30))
         while filler_song_ids.count < songs_left
+          if genreName == "edm"
+            genreName = ["edm", "dubstep"].sample
+          end
           puts "current songs filled: "
           puts filler_song_ids.count 
           puts "--------"

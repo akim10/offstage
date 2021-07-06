@@ -193,7 +193,6 @@ footer{
 #until{
   font-size:  20px;
   margin-left: 6px;
-  line-height: 34px;
   color: #eee;
 }
 #songsEntered{
@@ -506,4 +505,18 @@ h5{
     right: 0;
     top: 0;
   }
+}
+
+@media screen and (max-width: 400px){
+   .viewArtistButton{
+    padding-left: 24px;
+    padding-right: 24px;
+   }
+   .changeGenreButton{
+    padding-left: 20px;
+    padding-right: 20px;
+   }
+   .fullPageRounds{
+    transform: translateY(10%);
+   }
 }
