@@ -1,0 +1,509 @@
+/* --- Native Components --- */
+html{
+  background-color: #161616;
+  overflow-x: hidden;
+  /*overflow-y: scroll;*/
+  height: 100%;
+  width: 100%;
+  max-width: 1320px;
+  margin:  auto;
+}
+
+@media only screen and (min-height: 620px) {
+  html {
+    overflow-y: hidden;
+  }
+}
+
+.selectGenreText{
+  font-size: 18px;
+}
+
+body{
+  background-color: #161616;
+  font-family: 'RobotoCondensed-Light', Sans-Serif;
+  color: white;
+  position: relative;
+  min-height: 100vh;
+}
+a{
+  color: #1DB954;
+  letter-spacing: 0.18px;
+}
+a:hover{
+  text-decoration: none;
+  color: #1ED05D;
+}
+hr{
+  border-top: 1px solid #999;
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+footer{
+  position: relative;
+  bottom: 0;
+}
+
+
+/* --- Formatting Shortcuts --- */
+.inline{
+  display: inline;
+}
+.floatRight{
+  float: right;
+}
+.centered{
+  text-align: center;
+}
+.verticallyCentered{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.rightAlign{
+  text-align: right;
+}
+.fullHeight{
+  min-height: 450px;
+}
+.fullWidth{
+  width: 100%;
+}
+.fullScreen{
+  margin-top: -64px;
+  height: 100vh;
+  min-height: 620px;
+}
+.fitImage{
+  max-width:100%;
+  max-height:100%;
+}
+.noHorizontalPadding{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.marginBottom{
+  margin-bottom: 36px;
+}
+.marginBottom16{
+  margin-bottom: 16px;
+}
+.marginBottom32{
+  margin-bottom: 32px;
+}
+.marginTop32{
+  margin-top: 32px;
+}
+.noBottomMargin{
+  margin-bottom: 0px;
+}
+.noPaddingLeft{
+  padding-left: 0px;
+}
+.noPaddingRight{
+  padding-right: 0px;
+}
+
+/* --- Vertical Alignment--- */
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+.inner {
+  align-self: center;
+}
+.genreInner{
+  flex: 1;
+  margin-top: -64px;
+}
+
+/* --- Structure/Grid  --- */
+.container-fluid{
+  padding-left: 6.4%;
+  padding-right: 6.4%;
+}
+.row-no-margin{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.mainViewContainer{
+  /*min-width: 740px;*/
+  margin-bottom: 40px;
+}
+.divider{
+  border-top: 1px solid #444;
+  margin-bottom: 12px;
+}
+
+
+/* --- Nav Bar --- */
+.navbar{
+  margin-top: 32px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.navbar-dark .navbar-nav .nav-link{
+  color: white;
+  font-size: 17px;
+  margin-left: 24px;
+}
+.navUnderline{
+  border-bottom: 3px solid #15AB4A;
+}
+.navbar-brand{
+  font-family: 'BebasNeue-Regular', Sans-Serif;
+  font-size: 30px;
+  letter-spacing: 1.25px;
+  margin-right: 0px;
+}
+
+
+
+/* --- Footer  --- */
+.recordstageFooter{
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: white;
+  background-color: #101010;
+/*  position: fixed;
+  bottom:  0;
+  width: 100%;
+  left: 0;*/
+}
+.footerContent{
+  /*padding-left: 6.4%;*/
+  /*padding-right: 6.4%;*/
+  max-width: 1151px;
+  margin:  auto;
+}
+.recordstageFooter h3{
+  display: inline;
+}
+
+#nextRound{
+  margin-left: 16px;
+  font-size: 28px;
+  line-height: 40px;
+}
+#nextRoundInProgress{
+  font-size: 28px;
+  line-height: 40px;
+}
+#until{
+  font-size:  20px;
+  margin-left: 6px;
+  line-height: 34px;
+  color: #eee;
+}
+#songsEntered{
+  font-size:  18px;
+  color: #bbb;
+  line-height: 34px;
+  /*padding-right: 15px;*/
+}
+.noHorizontalPadding{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+/* --- Text Styles --- */
+p{
+  letter-spacing: 0.18px;
+}
+h1{
+  font-family: 'BebasNeue-Bold';
+  letter-spacing: 1px;
+  font-size: 56px;
+}
+h2{
+  font-family: 'BebasNeue-Bold', Sans-Serif;
+  letter-spacing: 0.8px;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+h3{
+  font-family: 'BebasNeue-Regular', Sans-Serif;
+  letter-spacing: 1px;
+  font-size: 32px;
+}
+.nextbracket{
+  color: #fcfcfc;
+}
+#countdown{
+  font-family: 'BebasNeue-Regular', Sans-Serif;
+}
+h4{
+  font-family: 'BebasNeue-Regular', Sans-Serif;
+  letter-spacing: 1px;
+  font-size: 28px;
+  display:inline;
+}
+/*h5{
+  font-family: 'BebasNeue-Regular', Sans-Serif;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: #CCCCCC;
+}*/
+h5{
+  font-family: 'RobotoCondensed-Bold', Sans-Serif;
+  letter-spacing: 0.2px;
+  font-size: 18px;
+  color: #eee;
+}
+/*.heavierP{
+  font-family: 'RobotoCondensed-Light', Sans-Serif;
+}*/
+
+.leftChevron{
+  position: relative;
+}
+.leftChevronSVG{
+  right: 24px;
+  bottom: 1px;
+  position: absolute;
+}
+
+/* --- Colors --- */
+.darkGreyBackground1{
+    background-color: #131313;
+}
+.darkGreyBackground2{
+    background-color: #101010;
+}
+.notif_title{
+  color: black;
+}
+
+
+/* --- Buttons --- */
+.btn-primary, .btn-secondary{
+  background-color: #15AB4A;
+  border-radius: 32px;
+  padding: 9px 32px 9px;
+  border: none;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:active:focus, .btn-primary:focus {
+  background-color: #159F46;
+}
+
+/*.btn:focus, .btn-primary:focus, .btn-secondary:focus,
+.btn:visited, .btn-primary:visited, .btn-secondary:visited
+.btn:active, .btn-primary:active, .btn-secondary:active,
+.btn:hover, .btn-primary:hover, .btn-secondary:hover{
+  background-color: #159F46 !important;
+  outline-color: 1px solid #159F46 !important;
+}
+.btn.active.focus, .btn.active:focus, .btn.active:hover, .btn:active.focus, .btn:active:focus, .btn:active:hover, 
+.open>.dropdown-toggle.btn.focus, .open>.dropdown-toggle.btn:focus, .open>.dropdown-toggle.btn:hover
+{
+  background-color: #159F46 !important;
+  outline-color: 1px solid #159F46 !important;
+}
+.btn-secondary.active.focus, .btn-secondary.active:focus, .btn-secondary.active:hover, .btn-secondary:active.focus, .btn-secondary:active:focus, .btn-secondary:active:hover, 
+.open>.dropdown-toggle.btn-secondary.focus, .open>.dropdown-toggle.btn-secondary:focus, .open>.dropdown-toggle.btn-secondary:hover
+{
+  background-color: #159F46 !important;
+  outline-color: 1px solid #159F46 !important;
+}*/
+.fa{
+  font-size: 22px;
+  margin-right: 10px;
+}
+.hidden{
+  display: none;
+}
+.btn-splash{
+  font-size: 20px;
+}
+.btn:hover{
+  cursor: pointer;
+  /*background-color: #139F44;*/
+}
+.btn.disabled:hover, .btn:disabled:hover {
+  cursor: default;
+  background-color: #6c757d;
+}
+.btn-secondary.disabled:hover, .btn-secondary:disabled:hover {
+  cursor: default;
+  background-color: #6c757d;
+}
+#nextVoteButton.disabled:hover, #nextVoteButton:disabled:hover {
+  cursor: default;
+  background-color: #6c757d !important;
+}
+.btn-link{
+  background-color: transparent;
+  color: #15AB4A;
+}
+.btn-link:hover{
+  cursor: pointer;
+  background-color: transparent;
+  color: #139F44;
+  text-decoration: none;
+}
+.btn-outline-primary{
+  border-radius: 32px;
+  padding: 9px 24px 9px;
+  /*color: #00B5E0;*/
+  color: #15AB4A;
+  border: 1px solid #15AB4A;
+}
+.btn-outline-primary:hover{
+  cursor: pointer;
+  background-color: #139F44;
+  border: 1px solid #139F44;
+}
+
+
+/* --- Images --- */
+.imageIcon{
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+}
+
+
+
+
+/* --- Modals --- */
+
+.notif_flash{
+  display: block;
+  display: flex; // make us of Flexbox
+  align-items: center; // does vertically center the desired content
+  justify-content: center; // horizontally centers single line items
+  text-align: center; // optional, but helps horizontally center text that breaks into multiple lines
+}
+.dimmed{
+  opacity: 0.4;
+}
+
+
+
+  
+/* --- Ended State --- */
+
+.embeddedSong{
+  margin-bottom: 18px;
+}
+
+.homeButton:hover, .homeButton:active, .homeButton:active:focus, .homeButton:focus {
+  background-color: #159F46 !important;
+}
+#nextVoteButton:hover, #nextVoteButton:active, #nextVoteButton:active:focus, #nextVoteButton:focus {
+  background-color: #159F46 !important;
+}
+#selectGenreButton:hover, #selectGenreButton:active, #selectGenreButton:active:focus, #selectGenreButton:focus {
+  background-color: #159F46 !important;
+}
+#selectGenreButton.disabled:hover{
+  background-color: #6c757d !important;
+}
+.search-btn:hover, .search-btn:active, .search-btn:active:focus, .search-btn:focus {
+  background-color: #159F46 !important;
+}
+#enterTrackButton:hover, #enterTrackButton:active, #enterTrackButton:active:focus, #enterTrackButton:focus {
+  background-color: #159F46 !important;
+}
+#enterTrackButton.disabled:hover{
+  background-color: #6c757d !important;
+}
+
+.btn-primary:focus, .btn-primary.focus, .btn:focus, .btn.focus{
+  box-shadow: 0px 0px 0px 0.2rem rgba(24, 227, 59, 0.62);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary.active:not(:disabled):not(.disabled):focus, .show > .btn-primary.dropdown-toggle:focus{
+  box-shadow: 0px 0px 0px 0.2rem rgba(24, 227, 59, 0.62);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:active:focus, .btn-outline-primary:focus {
+  background-color: #161616 !important;
+  -webkit-box-shadow:inset 0px 0px 0px 2px #1DB954;
+  -moz-box-shadow:inset 0px 0px 0px 2px #1DB954;
+  box-shadow:inset 0px 0px 0px 2px #1DB954;
+}
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary.active:not(:disabled):not(.disabled):focus, .show > .btn-outline-primary.dropdown-toggle:focus{
+  box-shadow: 0px 0px 0px 0.2rem rgba(24, 227, 59, 0.62);
+  /*color: #15AB4A;*/
+}
+.btn-outline-primary:hover{
+  /*color: #049036;*/
+  background-color: #161616 !important;
+  -webkit-box-shadow:inset 0px 0px 0px 1.8px #049036;
+  -moz-box-shadow:inset 0px 0px 0px 1.8px #049036;
+  box-shadow:inset 0px 0px 0px 1.8px #049036;
+}
+.form-control:focus{
+  border: 1px solid #1DB954 !important;
+}
+.navbar.navbar-expand.navbar-dark.row{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.recordstageFooter{
+  padding-left: 6.4%;
+  padding-right: 6.4%;
+}
+
+.show-sm{
+  display: none;
+}
+.show-md{
+  display: none;
+}
+.show-lg{
+  display: none;
+}
+ .show767{
+  display: none;
+ }
+
+@media screen and (max-width: 1280px){
+  .show-lg{
+    display: block;
+  }
+  .hidden-lg{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1000px){
+  .show-md{
+    display: block;
+  }
+  .hidden-md{
+    display: none;
+  }
+}
+@media screen and (max-width: 991px){
+   .hide{
+    display: none;
+   }
+}
+
+@media screen and (max-width: 767px){
+   .hide767{
+    display: none;
+   }
+   .show767{
+    display: block;
+   }
+  #songsEntered{
+    font-size:  18px;
+    color: #bbb;
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+}

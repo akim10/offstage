@@ -1,0 +1,64 @@
+@import "bootstrap";
+@import "font-awesome";
+/*@import "fonts";*/
+@import "styles";
+@import "splash";
+@import "devise";
+@import "voting";
+@import "songs";
+@import "users";
+@import "animate";
+
+@font-face {
+    font-family: 'BebasNeue-Bold';
+    src: asset-url('assets/fonts/BebasNeue-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: asset-url('assets/fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'BebasNeue-Book';
+    src: asset-url('assets/fonts/BebasNeue-Book.ttf');
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: asset-url('assets/fonts/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Light";
+    src: asset-url('assets/fonts/RobotoCondensed-Light.ttf');
+}
+
+@font-face {
+    font-family: "RobotoCondensed-Bold";
+    src: asset-url('assets/fonts/RobotoCondensed-Bold.ttf');
+}
+@font-face {
+    font-family: "LucidaGrande-Bold";
+    src: asset-url('assets/fonts/LucidaGrande-Bold.ttf');
+}
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrap
+ *= require bootstrap_responsive
+ *= require font-awesome
+ *= require styles
+ */

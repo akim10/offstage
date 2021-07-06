@@ -1,0 +1,166 @@
+.sectionDivider{
+  margin-bottom: 24px;
+}
+.fieldDivider{
+  margin-top: 14px;
+  margin-bottom: 24px;
+  border-top: 1px solid #444;
+}
+.accountLabel{
+  display: inline;
+  color: #D0D0D0;
+}
+.accountField{
+  float: right;
+  display: inline;
+}
+.spotifyEditLink{
+  margin-bottom: 16px;
+}
+.accountGenreLabel{
+  margin-bottom: 12px;
+  color: white;
+}
+.accountArtist{
+  height: 48px;
+}
+.accountArtistWidget{
+  height: 48px;
+  display: inline-block;
+}
+.accountArtistWidget img{
+  width: 48px;
+  height: 48px;
+  float: left;
+  border-radius:50% 50% 50% 50%;
+}
+.accountArtistWidgetName{
+  padding-left: 68px;
+  font-family: 'Lucida Grande';
+  font-size: 14px;
+  text-align: left;
+}
+.accountArtist{
+  margin-bottom: 24px;
+}
+.accountSong{
+  margin-bottom: 16px;
+}
+.accountSongWidget{
+  display: inline-block;
+}
+
+.accountSongWidget, .accountSong{
+  height: 48px;
+}
+.accountSongWidget img{
+  height: 48px;
+  width: 48px;
+  float: left;
+}
+
+.accountSongWidget .trackYearName{
+  margin-left: 20px;
+  padding-top: 4px;
+  display: inline-block;
+}
+
+.signOutLink{
+  color: white;
+}
+.signOutLink:hover{
+  color: #bbb;
+}
+
+
+.genreForm{
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.genreSelect{
+  display: inline;
+  padding-left: 0px;
+  padding-right: 4%;
+}
+
+.noPaddingRight{
+  padding-right: 0px
+}
+#hiphop{
+  background: image-url("hipHopGenre.svg");
+  /*background-position: -2px -2px;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#edm{
+  background: image-url("edmGenre.svg");
+  /*background-position: -3.5px -2px;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#rock{
+  background: image-url("rockGenre.svg");
+  /*background-position: -3.5px -2px;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#indie{
+  background: image-url("indieGenre.svg");
+  /*background-position: -3.5px -2px;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.genreButton{
+  padding-left: 10.5%;
+  padding-right: 10.5%;
+  background-color: #101010;
+  padding-top: 21.6%;
+  border-radius: 4px;
+  text-align: center;
+  background-size: cover;
+  margin-bottom: 16px;
+}
+.genreButton:hover{
+  /*border: 1.5px solid #00ADD7;*/
+  box-shadow: inset 0px 0px 0px 1.5px #15AB4A;
+  background-color: #1A1A1A;
+  cursor: pointer;
+}
+.genreButton:not(:disabled):not(.disabled).active{
+  box-shadow: inset 0px 0px 0px 4px #15AB4A;
+}
+
+#selectGenreButton{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

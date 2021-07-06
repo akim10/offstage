@@ -1,0 +1,52 @@
+<div class="container-fluid animated fadeIn fast">
+  <div class="fullPageRounds">
+    <div class="row row-no-margin preVoting">
+      <div class="col-12 fullHeight">
+        <div class="fullWidth centered ">
+        <h1 class="stateName"><%= @current_genre_name %> </h1>
+    
+          <p class="groupInfoSubtext">
+            <%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %> Songs Entered &mdash; Round 1 will begin on July 19
+          </p>
+          <% unless current_user.song%>
+            <% unless @current_genre.participant_cap == @current_genre.songs.count %>
+              <%= link_to "Enter Now", songs_path, class: "btn btn-primary homeButton"%>
+            <% end %>
+          <% end %>
+          <%= link_to "Change Genre", select_current_genre_users_path(current_user), method: :put, class: "btn btn-outline-primary homeButton"%>
+          
+
+      </div>
+    </div>
+    <div class="col-12">
+      <% if @song && @artist %>
+        <p class="centered enterSoundStageText"> 
+          <%= link_to "#{@song.name} by #{@artist.name}", "https://open.spotify.com/track/#{@song.id}", target: "_blank"%> has been submitted to the next <strong><%=@submitted_genre_name%></strong> Recordstage.
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+  
+
+</div>  <!-- end container -->
+<% if current_user.song %>
+<footer class="fullWidth">
+  <div class="container-fluid darkGreyBackground2">
+    <div class="row recordstageFooter fixed-bottom">
+      <div class="footerContent col-12">
+        <h3 id="countdown">&nbsp;</h3><span id="until">remaining</span>
+        <div class="nextBracketDay hidden"><%= @next_bracket_day %></div>
+        <div class="floatRight">
+            <div class="rightFooterContent">
+              <span id="songsEntered"> <%= @current_user.song.genre.format_genre %> Entry - <strong><%=RSpotify::Track.find(current_user.song.track_id).name%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;
+              <%= link_to "Remove", songs_destroy_path %> </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<% end %>

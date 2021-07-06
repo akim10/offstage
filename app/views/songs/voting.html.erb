@@ -1,0 +1,94 @@
+<div class="container-fluid">
+    <div class="songVS wrap fullScreen">
+
+      <div class="inner fullWidth animated fadeIn fast votingContent">
+        <h2 class="centered"><%= @next_round %></h2>
+        <%= form_tag "/songs/submit_vote" do %>
+        <div id="topEmbeddedSong" class="row row-no-margin marginTop32">
+          <div class="col-0 col-md-1 col-lg-2">
+          </div>
+          <div class="col-10 col-md-10 col-lg-8">
+
+            <div class="centered embeddedSong">
+              <iframe src="https://open.spotify.com/embed/track/<%= @song1.id %>" width="100%" height="92px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+          </div>
+ <!-- d-none d-md-block d-lg-block d-xl-block -->
+          <div class="col-2 col-md-1 col-lg-2 wrap">
+            <label class="btn btn-secondary inner votingButton voteRadioButton">
+              <%= radio_button_tag("song_id", @song1.id) %>
+            </label>
+            <p class="voteLabel">
+              VOTE
+            </p>
+          </div>
+        </div>
+
+        <div class="row row-no-margin">
+          <div class="col-0 col-md-1 col-lg-2">
+          </div>
+
+          <div class="col-12 col-md-10 col-lg-8 d-none d-md-block d-lg-block d-xl-block">
+            <div class="centered artistWidgets row row-no-margin">
+              <div class="artistWidgetLeft col-5">
+                <% if @artist1.images.first.nil? %>
+                  <%=image_tag("noImage.png")%>
+                <% else %>
+                <%= link_to image_tag(@artist1.images.first["url"]), "https://open.spotify.com/artist/#{@artist1.id}", target: "_blank"%>
+                <% end %>
+                <%= link_to "#{@artist1.name}", "https://open.spotify.com/artist/#{@artist1.id}", class: "artistNameLeft verticallyCentered", target: "_blank"%> 
+              </div>
+              <p id="vsText" class="col-2 verticallyCentered">
+                VS
+              </p>
+              <div class="artistWidgetRight col-5">
+                <% if @artist2.images.first.nil? %>
+                  <%=image_tag("noImage.png")%>
+                <% else %>
+                <%= link_to image_tag(@artist2.images.first["url"]), "https://open.spotify.com/artist/#{@artist2.id}", target: "_blank"%>
+                <% end %>
+                <%= link_to "#{@artist2.name}", "https://open.spotify.com/artist/#{@artist2.id}", class: "artistNameRight verticallyCentered", target: "_blank"%> 
+              </div>
+            </div>
+          </div>
+
+          <div class="col-0 col-md-1 col-lg-2">
+          </div>
+        </div>
+
+
+        <div id="botEmbeddedSong" class="row row-no-margin">
+          <div class="col-0 col-md-1 col-lg-2">
+          </div>
+          <div class="col-10 col-md-10 col-lg-8">
+            <div class="centered embeddedSong">
+              <iframe src="https://open.spotify.com/embed/track/<%= @song2.id %>" width="100%" height="92px" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+          </div>
+          <div class="col-2 col-md-1 col-lg-2 wrap">
+            <label class="btn btn-secondary inner votingButton voteRadioButton">
+              <%= radio_button_tag("song_id", @song2.id) %>
+            </label>
+            <p class="voteLabel">
+              VOTE
+            </p>
+          </div>
+        </div>
+        <div class="row row-no-margin">
+          <div class="col-0 col-md-1 col-lg-2">
+          </div>
+          <div class="col12 col-md-10 col-lg-8">
+            <div class="centered">
+              <%= submit_tag "Next", disabled: true, class:"btn btn-secondary disabled", :id => "nextVoteButton"  %>
+              <!-- <a class="btn btn-secondary disabled" id="nextVoteButton" role="submit">Next</a> -->
+            </div>
+          </div>
+          <div class="col-0 col-md-1 col-lg-2">
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+
+  </div>
+</div>  <!-- end container -->

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand navbar-dark row">
+    <% if user_signed_in? %>
+      <a class="navbar-brand">
+        <!-- <%= link_to "Offtrack", root_path, class:"navbar-brand" %> -->
+        <%=link_to image_tag("logo.svg"), root_path, class:"navbar-brand"%>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"navUnderlsine nav-item nav-link"%>
+        </div>
+      </div>
+    <% else %>
+<!--       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link navUnderline" href="<%= new_user_session_path%>">Sign In </a>
+        </div>
+      </div> -->
+    <% end %>
+
+  </nav>
+</div> <!-- end container -->

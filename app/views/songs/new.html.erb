@@ -1,0 +1,68 @@
+<div class="container-fluid submitSongPage">
+  <div class="row row-no-margin">
+    <div class="col-0 col-md-1 col-lg-2">
+    </div>
+
+    <div class="col-12 col-md-10 col-lg-8 mainViewContainer animated fadeIn fast">
+      <div class="row marginTop32">
+        <div class="col-12">
+          <h4> Submit a Song </h4>
+          <hr />
+          <p> Search for a song or artist.</p>
+
+
+          <%= form_tag songs_path, method: :get do %>
+            <div class="form-group">
+              <%= text_field_tag :search, params[:search], placeholder: "e.g. Dom Fera", class: "form-control", autocomplete: 'off', :value => '' %>
+            </div>
+            <%= submit_tag 'Search', class: 'btn btn-primary linkArtistButton'%>
+          <%end%>
+
+           <% if @track_results %>
+            <%= form_for(@song) do |f| %> 
+
+
+
+
+              <div class="tracklist">
+                  <% @track_results.each do |track| %>
+                    <div class="songRow">
+                      <div class="trackInfoLeft">
+                        <%= image_tag track.album.images.first["url"], class:"albumImage"%>
+                        <div class="trackYearName">
+                          <p class="trackYear"><%= track.artists[0] %></p>
+                          <p class="trackName"><%= track.name %></p>
+                        </div>
+                      </div>
+                      <div class="trackInfoRight">
+                        <% if track.explicit %>
+                          <%= image_tag "explicitIndicator.svg", class: "explicitIndicator"%>
+                        <% end %>
+                        <span class="trackDuration"><%= formatTrackDuration(track.duration_ms) %></span>
+                        <label class="btn btn-secondary selectRadioButton">
+                          <%= f.radio_button("track_id", track.id) %>
+                        </label>
+                      </div>
+                    </div>
+                    <hr class="divider" />
+                  <% end %>
+              </div>
+              <div class="rightAlign">
+                <%= f.submit 'Submit', class: 'btn btn-secondary ', :id => "submitTrackButton"%>
+              </div>
+
+
+
+
+             <% end %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-0 col-md-1 col-lg-2">
+    </div>
+  </div>
+</div>  <!-- end container -->

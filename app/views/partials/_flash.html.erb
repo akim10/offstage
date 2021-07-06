@@ -1,0 +1,28 @@
+<% flash.each do |key, value| %>
+  <div id="notif_modal" class="modal notif_flash animated fadeIn fast" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <% if value == ""%>
+          <% elsif value["Artist"] || value["artist"] %>
+            <h4 class="modal-title notif_title">Error</h4>
+          <% else %>
+            <h4 class="modal-title notif_title">Attention</h4>
+          <% end %>
+        </div>
+        <div class="modal-body">
+          <p><%= value %></p>
+        </div>
+        <div class="modal-footer">
+          <% if value["Artist"] || value["artist"] %>
+            <%= link_to "Close", class:"close-modal"%>
+          <% else %>
+            <%= link_to "Close", clear_notification_home_index_path%>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop dimmed"></div>
+<% end %>

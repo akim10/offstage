@@ -1,0 +1,10 @@
+# Add configuration values here, as shown below.
+#
+SPOTIFY_CLIENT: "285d03fed4f141578b4d01977ed529f8"
+SPOTIFY_SECRET: "f83beade79a9437b93ab8964534290c7"
+
+GMAIL_USERNAME: 'recordstagehelp@gmail.com'
+GMAIL_PASSWORD: 'FormerlySoundstage6()'
+
+#
+# production:

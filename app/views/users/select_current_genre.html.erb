@@ -1,0 +1,51 @@
+<div class="container-fluid  animated fadeIn fast">
+  <div class="fullPageRounds">
+    <div class="row row-no-margin preVoting">
+
+
+      <div class="col-0 col-md-1 col-lg-2">
+      </div>
+      <div class="col-12 col-md-10 col-lg-8 fullHeight">
+        <div class="fullWidth centered ">
+            <h2 class="centered">Select Genre </h2>
+            <!-- <p class="selectGenreText centered"> Select a genre /</p> -->
+            <div class="currentGenreForm marginTop32">
+              <%= form_for @user, url: user_path(@user) do |f| %>
+                <div class="co2l-3 genreSelect noPaddingLeft">
+                  <label class="btn btn-secondary genreButton genreRadioButton" id="hiphop">
+                    <%= f.radio_button("genre_id", 1) %>
+                  </label>
+                </div>
+                <div class="genreSelect">
+                  <label class="btn btn-secondary genreButton genreRadioButton" id="edm">
+                    <%= f.radio_button("genre_id", 2) %>
+                  </label>
+                </div>
+                <div class="genreSelect">
+                  <label class="btn btn-secondary genreButton genreRadioButton" id="rock">
+                    <%= f.radio_button("genre_id", 3) %>
+                  </label>
+                </div>
+                <div class="genreSelect noPaddingRight">
+                  <label class="btn btn-secondary genreButton genreRadioButton" id="indie">
+                    <%= f.radio_button("genre_id", 4)%>
+                  </label>
+                </div>
+
+                <div class="centered marginTop32">
+                  <%= f.submit 'Select', disabled: true, class: 'btn btn-secondary disabled', :id => "selectGenreButton"%>
+                </div>
+              <%end%>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-0 col-md-1 col-lg-2">
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>  <!-- end container -->

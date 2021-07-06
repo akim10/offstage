@@ -1,0 +1,71 @@
+<div class="container-fluid submitSongPage">
+  <div class="row row-no-margin">
+    <div class="col-0 col-md-1 col-lg-2">
+    </div>
+
+    <div class="col-12 col-md-10 col-lg-8 mainViewContainer animated fadeIn fast">
+      <div class="marginTop32 enterSongForm">
+          <h2 class="centered"> Enter the <%= current_user.genre.format_genre %> Bracket </h2>
+          <%= form_tag songs_path, method: :get do %>
+            <div class="form-group form-inline centered">
+              <%= text_field_tag :search, params[:search], placeholder: "Search for a song or artist on Spotify", class: "form-control ", autocomplete: 'off', :value => '' %>
+<!--               <div class="searchButton">
+                <%= submit_tag 'Search', class: 'btn btn-secondary search-btn'%>
+              </div> -->
+            </div>
+          <%end%>
+
+           <% if @track_results %>
+            <%= form_for(@song) do |f| %> 
+              <div class="tracklist">
+                  <% @track_results.each do |track| %>
+                    <div class="songRow">
+                      <div class="trackInfoLeft">
+                        <%= image_tag track.album.images.first["url"], class:"albumImage"%>
+                        <div class="trackYearName">
+                          <p class="trackName"><%= track.name %></p>
+                          <p class="trackYear"><%= track.artists[0].name%></p>
+                        </div>
+                      </div>
+                      <div class="trackInfoRight">
+                        <span class="trackDuration"><%= formatTrackDuration(track.duration_ms) %></span>
+                        <label class="btn btn-secondary selectRadioButton">
+                          <%= f.radio_button("track_id", track.id) %>
+                        </label>
+                      </div>
+                    </div>
+                    <hr class="divider" />
+                  <% end %>
+              </div>
+
+            <footer class="fullWidth">
+              <div class="container-fluid darkGreyBackground2">
+                <div class="row recordstageFooter fixed-bottom">
+
+                <div class="footerContent col-12 enterSongFooter">
+                  <!-- <div class="nextBracketDay hidden"><%= @next_bracket_day %></div> -->
+                  <!-- <span>Enter a Song</span> -->
+
+
+                  <div class="centered">
+                    <%= f.submit 'Enter Song', disabled: true, class: 'btn btn-secondary disabled', :id => "enterTrackButton"%>
+                  </div>
+                </div>
+
+                </div>
+              </div>
+            </footer>
+
+
+
+             <% end %>
+          <% end %>
+
+      </div>
+    </div>
+
+
+    <div class="col-0 col-md-1 col-lg-2">
+    </div>
+  </div>
+</div>  <!-- end container -->

@@ -1,0 +1,47 @@
+<div class="container-fluid animated fadeIn fast">
+  <div class="fullPageRounds">
+    <div class="row row-no-margin preVoting">
+      <div class="col-12 fullHeight">
+        <div class="fullWidth centered ">
+        <h1 class="stateName"><%= @current_genre_name %> </h1>
+        
+        <% if current_user.song_queue[@current_genre.name].empty? %>
+          <p class="groupInfoSubtext">
+            You've voted for all of the songs this round. <br /> Check back <%=@next_round_day%> for <%=@next_round%>!
+          </p>
+        <% else %>
+          <p class="groupInfoSubtext">
+            <%= @round_title %> &mdash; <%= @current_genre.songs.active.count %>  Artists Remaining
+          </p>
+          <%= link_to "Vote Now", {:controller => :songs, :action => :voting}, class: "btn btn-primary homeButton voteNowButton"%>          
+        <% end %>
+          <%= link_to "Change Genre", select_current_genre_users_path(current_user), method: :put, class: "btn btn-outline-primary homeButton"%>
+      </div>
+    </div>
+  </div>
+</div>
+</div>  <!-- end container -->
+
+
+<footer class="fullWidth">
+  <div class="container-fluid darkGreyBackground2">
+    <div class="row recordstageFooter fixed-bottom">
+      <div class="footerContent col-12 centered">
+        <h3 id="countdown"></h3>
+        <div class="nextBracketDay hidden"><%= @next_bracket_day %></div>
+        <!-- <h3 class="nextbracket">Next Bracket - </h3> -->
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- 
+
+<footer class="fullWidth">
+  <div class="container-fluid darkGreyBackground2">
+    <div class="row recordstageFooter fixed-bottom">
+      <div class="col-12 noHorizontalPadding centered">
+        <h2 id="nextRoundInProgress"> Next Round: 3D 14H 10M </h2>
+      </div>
+    </div>
+  </div>
+</footer> -->

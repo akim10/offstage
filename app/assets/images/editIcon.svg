@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="20px" viewBox="0 0 17 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 4 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="dev-handoff" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4-Copy" transform="translate(8.500000, 10.500000) rotate(38.000000) translate(-8.500000, -10.500000) translate(5.000000, -1.000000)">
+            <path d="M1.25112156,18.414 C1.32312156,18.846 2.00712156,20.25 3.30312156,22.626 C4.81512156,20.394 5.60712156,18.99 5.67912156,18.414 C5.78712156,17.55 5.67912156,3.726 5.67912156,2.538 C5.67912156,1.35 4.75813728,0.81 3.51912156,0.81 C2.28010583,0.81 1.57512156,1.134 1.25112156,2.538 C0.927121555,3.942 1.14312156,17.766 1.25112156,18.414 Z" id="Path-20" stroke="#FFFFFF" stroke-width="1.188" stroke-linejoin="round"></path>
+            <line x1="5.67912156" y1="18.522" x2="1.25112156" y2="18.522" id="Path-22" stroke="#FFFFFF" stroke-width="1.188"></line>
+            <polygon id="Path-19" fill="#FFFFFF" transform="translate(3.365767, 3.219828) rotate(-33.000000) translate(-3.365767, -3.219828) " points="0.935766833 2.06177062 5.05170385 5.18788465 5.79576683 2.87177062 4.71576683 1.25177062 2.82576683 1.25177062"></polygon>
+        </g>
+    </g>
+</svg>
