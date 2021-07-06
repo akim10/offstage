@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :require_login
   def new_session_path(scope)
-    new_user_session_path
+    root_path
   end
 
   # def not_found
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     if !user_signed_in?
       puts params[:controller]
       if !(params[:controller] == 'home')
-        redirect_to new_user_session_path
+        redirect_to root_path
       end
     end
   end
