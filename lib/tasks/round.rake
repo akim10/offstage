@@ -374,6 +374,8 @@ namespace :round do
           filler_song_ids = filler_song_ids.uniq
           sleep(4)
         end
+        # in order to minimize risk of race conditions, re-check the number of songs in the current genre
+        songs_left = next_highest_cap - genre.songs.count
         [*0..songs_left-1].each do |i|
           # go through the filler song ids and create a song from each of them
           new_filler_song = {active: true, track_id: filler_song_ids[i], votes: 0, pair_id: nil, user_id: User.count + Song.count + 65000 + i, genre_id: genre.id}
@@ -382,5 +384,4 @@ namespace :round do
         filler_songs.each { |song| Song.create! song }
       end
     end
-
 end
