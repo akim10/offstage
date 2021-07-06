@@ -18,7 +18,7 @@ namespace :round do
   desc "Determining what action to do for each of the genres"
   task determine_action: :environment do
     require 'date'
-    start_date = Date.new(2021,6,19)
+    start_date = Date.new(2021,7,23)
     if Date.today >= start_date
       # if ['Monday', 'Friday'].include? Date.today.strftime("%A")
         Genre.all.each do |genre|
@@ -315,7 +315,7 @@ namespace :round do
 
         # find the next highest power of 2
         # if song_total < 32
-        next_highest_cap = 2
+        next_highest_cap = 32
         # else
           # next_highest_cap = 2**(song_total.bit_length)
         # end
