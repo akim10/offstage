@@ -9,10 +9,10 @@
 
 Genre.delete_all
 genres = [
-  { id: 1, name: 'hiphop', participant_cap: 32},
-  { id: 2, name: 'edm', participant_cap: 32},
-  { id: 3, name: 'rock', participant_cap: 32,},
-  { id: 4, name: 'indie', participant_cap: 32}
+  { id: 1, name: 'hiphop', participant_cap: 32, next_day: "Friday"},
+  { id: 2, name: 'edm', participant_cap: 32, next_day: "Friday"},
+  { id: 3, name: 'rock', participant_cap: 32, next_day: "Friday"},
+  { id: 4, name: 'indie', participant_cap: 32, next_day: "Friday"}
   # { name: 'hiphop', participant_cap: 32, state: 'in progress' },
   # { name: 'edm', participant_cap: 32, state: 'in progress' },
   # { name: 'pop', participant_cap: 32, state: 'in progress' },
