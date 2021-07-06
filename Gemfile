@@ -34,7 +34,7 @@ gem 'popper_js'
 gem 'bootstrap', '~> 4.3.1'
 
 # jquery
-gem 'jquery-rails'
+# gem 'jquery-rails'
 
 # font awesome
 gem 'font-awesome-rails'
@@ -156,6 +156,6 @@ group :production do
 
   # Reduces boot times through caching; required in config/boot.rb
   gem 'bootsnap', '>= 1.4.2', require: false
-  # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'rails_12factor'
 end
