@@ -39,7 +39,7 @@
           <div class="nextBracketDay hidden"><%= @next_bracket_day %></div>
           <div class="floatRight">
               <div class="rightFooterContent">
-                <span id="songsEntered"> <%= @current_user.song.genre.format_genre %> Entry - <strong><%=RSpotify::Track.find(current_user.song.track_id).name%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;
+                <span id="songsEntered"> <%= @current_user.song.genre.format_genre %> Entry - <strong><%=truncate(RSpotify::Track.find(current_user.song.track_id).name, :length => 23)%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;
                 <%= link_to "Remove", songs_destroy_path %> </span>
             </div>
           </div>
@@ -52,7 +52,7 @@
     <div class="darkGreyBackground2">
       <div class="row recordstageFooter fixed-bottom">
         <div class="footerContent col-12 centered">
-          <span id="songsEntered"> <%= @current_user.song.genre.format_genre %> Entry - <strong><%=RSpotify::Track.find(current_user.song.track_id).name%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;
+          <span id="songsEntered"> <%= @current_user.song.genre.format_genre %> Entry - <strong><%=truncate(RSpotify::Track.find(current_user.song.track_id).name, :length => 23)%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;
             <%= link_to "Remove", songs_destroy_path %> </span>
         </div>
       </div>
