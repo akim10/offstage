@@ -38,7 +38,7 @@ namespace :round do
             Rake::Task["round:start_stage"].reenable
           end
         end
-      # end
+      end
     end
   end
 
