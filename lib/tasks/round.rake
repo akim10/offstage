@@ -20,7 +20,7 @@ namespace :round do
     require 'date'
     start_date = Date.new(2021,7,9)
     if Date.today >= start_date
-      # if ['Monday', 'Friday'].include? Date.today.strftime("%A")
+      if ['Monday', 'Friday'].include? Date.today.strftime("%A")
         Genre.all.each do |genre|
           if genre.state == "in progress"
             puts "state: in progress"
@@ -312,19 +312,12 @@ namespace :round do
 
       # if the total number of songs is not a power of two
       if song_total < 32
-
-        # find the next highest power of 2
-        # if song_total < 32
-        next_highest_cap = 32
-        # else
-          # next_highest_cap = 2**(song_total.bit_length)
-        # end
+        next_highest_cap = 2
         songs_left = next_highest_cap - song_total
         staged_artists = []
         staged_songs = []
         filler_song_ids = []
         filler_songs = []
-        # random_search_result = RSpotify::Track.search("genre:"+genre_words.sample, offset: rand(0..30))
         while filler_song_ids.count < songs_left
           if genreName == "edm"
             genreName = ["edm", "dubstep"].sample
@@ -334,7 +327,6 @@ namespace :round do
           puts "--------"
           # search for a random song to be a seed in the recommendation list generation
           # get random songs from this genre that aren't too popular
-          # recommendationsRaw = RSpotify::Recommendations.generate(limit: 60, seed_tracks: [random_track.id], seed_genres: genre_seeds, target_popularity: 35, target_popularity: 50)
           search_query = "genre: " + genreName + " " + query_words.sample
           puts "search query: "
           puts search_query
@@ -344,8 +336,6 @@ namespace :round do
           puts "total number of search results: "
           puts searchResultsTotal
           puts "--------"
-          # try to push this closer to the end
-          # consider lowering the follower max
           if searchResultsTotal >= 1000
             searchResults = RSpotify::Track.search(search_query, limit: 50, offset: rand(599..899))
           elsif searchResultsTotal < 1000 && searchResultsTotal > 150
@@ -354,7 +344,6 @@ namespace :round do
             searchResults = RSpotify::Track.search(search_query, limit: 50)
           end
 
-          # start from the end, move backwards through the search results to a certain point and don't allow any repeat artists
           searchResults.each do |song|
             if !(staged_artists.include? song.artists[0])
               staged_artists += [song.artists[0]]
