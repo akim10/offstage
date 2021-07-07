@@ -16,37 +16,49 @@
           <%= link_to "Change Genre", select_current_genre_users_path(current_user), method: :put, class: "btn btn-outline-primary homeButton"%>
           
 
+        </div>
+      </div>
+      <div class="col-12">
+        <% if @song && @artist %>
+          <p class="centered enterSoundStageText"> 
+            <%= link_to "#{@song.name} by #{@artist.name}", "https://open.spotify.com/track/#{@song.id}", target: "_blank"%> has been submitted to the next <strong><%=@submitted_genre_name%></strong> Recordstage.
+          </p>
+        <% end %>
       </div>
     </div>
-    <div class="col-12">
-      <% if @song && @artist %>
-        <p class="centered enterSoundStageText"> 
-          <%= link_to "#{@song.name} by #{@artist.name}", "https://open.spotify.com/track/#{@song.id}", target: "_blank"%> has been submitted to the next <strong><%=@submitted_genre_name%></strong> Recordstage.
-        </p>
-      <% end %>
-    </div>
   </div>
-</div>
 
 
   
-
-</div>  <!-- end container -->
-<% if current_user.song %>
-<footer class="fullWidth">
-  <div class="container-fluid darkGreyBackground2">
-    <div class="row recordstageFooter fixed-bottom">
-      <div class="footerContent col-12">
-        <h3 id="countdown"></h3><span id="until">remaining</span>
-        <div class="nextBracketDay hidden"><%= @next_bracket_day %></div>
-        <div class="floatRight">
-            <div class="rightFooterContent">
-              <span id="songsEntered"> <%= @current_user.song.genre.format_genre %> Entry - <strong><%=RSpotify::Track.find(current_user.song.track_id).name%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;
-              <%= link_to "Remove", songs_destroy_path %> </span>
+  <% if current_user.song %>
+  <footer class="fullWidth hide767">
+    <div class="darkGreyBackground2">
+      <div class="row recordstageFooter fixed-bottom">
+        <div class="footerContent col-12">
+          <h3 id="countdown"></h3><span id="until">remaining</span>
+          <div class="nextBracketDay hidden"><%= @next_bracket_day %></div>
+          <div class="floatRight">
+              <div class="rightFooterContent">
+                <span id="songsEntered"> <%= @current_user.song.genre.format_genre %> Entry - <strong><%=RSpotify::Track.find(current_user.song.track_id).name%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;
+                <%= link_to "Remove", songs_destroy_path %> </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-<% end %>
+  </footer>
+
+  <footer class="fullWidth show767">
+    <div class="darkGreyBackground2">
+      <div class="row recordstageFooter fixed-bottom">
+        <div class="footerContent col-12 centered">
+          <span id="songsEntered"> <%= @current_user.song.genre.format_genre %> Entry - <strong><%=RSpotify::Track.find(current_user.song.track_id).name%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;
+            <%= link_to "Remove", songs_destroy_path %> </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <% end %>
+
+</div>  <!-- end container -->
+
