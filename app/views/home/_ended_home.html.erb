@@ -37,7 +37,7 @@
         <div class="nextBracketDay hidden"><%= @next_bracket_day %></div>
         <div class="floatRight">
           <% if current_user.song %>
-              <span id="songsEntered"><span id="songEntry"><%= @current_user.song.genre.format_genre %> Entry (<%= @current_genre.songs.count %>/<%= @current_genre.participant_cap %>) -
+              <span id="songsEntered"><span id="songEntry"><%= @current_user.song.genre.format_genre %> Entry (<%= @current_user.song.genre.songs.count %>/<%= @current_user.song.genre.participant_cap %>) -
 
               <strong><%=truncate(RSpotify::Track.find(current_user.song.track_id).name, :length => 23)%></strong> by <strong><%=RSpotify::Track.find(current_user.song.track_id).artists[0].name %></strong>  &nbsp;</span>
               <%= link_to "Remove", songs_destroy_path %> </span>
