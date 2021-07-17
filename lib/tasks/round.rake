@@ -31,14 +31,10 @@ namespace :round do
   desc "Invoke the set up stage task depending on whether or not byes are needed"
   task :start_stage, [:genre] => [:environment] do |task, args|
     puts "in start stage"
-    if args[:genre].state == "ended"
-      # do nothing if its ended so the next day resets properly
-    else
-      if args[:genre].next_day == "Friday"
-        args[:genre].update_attribute("next_day", "Monday")
-      elsif args[:genre].next_day == "Monday"
-        args[:genre].update_attribute("next_day", "Friday")
-      end
+    if args[:genre].next_day == "Friday"
+      args[:genre].update_attribute("next_day", "Monday")
+    elsif args[:genre].next_day == "Monday"
+      args[:genre].update_attribute("next_day", "Friday")
     end
 
     if args[:genre].songs.count < 32
