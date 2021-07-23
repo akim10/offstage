@@ -314,7 +314,7 @@ namespace :round do
           # puts "--------"
           searchResultsTotal = RSpotify::Track.search(search_query).total
           # wait to avoid too many requests
-          sleep(4)
+          sleep(8)
           # puts "total number of search results: "
           # puts searchResultsTotal
           # puts "--------"
@@ -343,7 +343,7 @@ namespace :round do
 
           filler_song_ids += cleanSongs.map(&:id)
           filler_song_ids = filler_song_ids.uniq
-          sleep(4)
+          sleep(8)
         end
         # in order to minimize risk of race conditions, re-check the number of songs in the current genre
         songs_left = next_highest_cap - genre.songs.count
