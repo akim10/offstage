@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  skip_before_action :require_login, :except => [:index]
   def index
     if user_signed_in?
       if current_user.genre_id == nil
