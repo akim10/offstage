@@ -13,10 +13,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     if !user_signed_in?
-      puts params[:controller]
-      if !(params[:controller] == 'home')
-        redirect_to root_path
-      end
+      redirect_to root_path
     end
   end
 
