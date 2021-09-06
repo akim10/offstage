@@ -4,7 +4,7 @@ namespace :round do
   desc "Determining what action to do for each of the genres"
   task determine_action: :environment do
     require 'date'
-    start_date = Date.new(2021,7,9)
+    start_date = Date.new(2021,9,10)
     if Date.today >= start_date
       if ['Monday', 'Friday'].include? Date.today.strftime("%A")
         Genre.all.each do |genre|
